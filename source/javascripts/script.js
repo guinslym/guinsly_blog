@@ -1,4 +1,4 @@
- 
+   
 // Chart dimensions.
 var w = 550,
 h = 520,
@@ -33,6 +33,7 @@ var fill = d3.scale.ordinal()
   .domain([0, 1, 2])
   .range(colors);
 
+ console.log(layout);
  
 // The arc generator, for the groups.
 var arc = d3.svg.arc()
@@ -44,7 +45,7 @@ var chord = d3.svg.chord()
 .radius(r0);
  
 // Add an SVG element for each diagram, and translate the origin to the center.
-var svg = d3.select("body").selectAll("div")
+var svg = d3.select("section.origine").selectAll("div")
   .data([provOrigin, destination])
   .enter().append("div")
   .attr("class", "sibling-1 animated bounceIn")
@@ -78,7 +79,7 @@ d3.csv("https://gist.githubusercontent.com/guinslym/c31add58ee6550cf77cc/raw/367
         MATRIX
   *********************/
   //how come 'n' is < 0
-  console.log("n value= 13 provinces" + n);
+  //console.log("n value= 13 provinces" + n);
   // Initialize a square matrix of provOrigin and destination.
   for (var i = 0; i < n; i++) {
     provOrigin[i] = [];
@@ -105,6 +106,7 @@ d3.csv("https://gist.githubusercontent.com/guinslym/c31add58ee6550cf77cc/raw/367
   svg.each(function(matrix, j) {
   var svg = d3.select(this);
    
+   console.log("hello");
   // Compute the chord layout.
   layout.matrix(matrix);
    
@@ -119,68 +121,6 @@ d3.csv("https://gist.githubusercontent.com/guinslym/c31add58ee6550cf77cc/raw/367
                       "PE","QC", "SK", "YK"];
 //fonction find the province name
 
-//http://en.wikipedia.org/wiki/Canadian_postal_abbreviations_for_provinces_and_territories
-function trouver_le_nom_de_la_province(name){
-  if (name == "AB"){
-    return "L'Alberta";
-  }else if (name == "BC"){
-    return "La Colombie-Britannique";
-  }else if (name == "MB"){
-    return "Le Manitoba";
-  }else if (name == "NB"){
-    return "Le Nouveau-Brunswick";
-  }else if (name == "NL"){
-    return "Terre-neuve";
-  }else if (name == "NS"){
-    return "La Nouvelle-Écosse";
-  }else if (name =="NT"){
-    return "des Territoires du Nord d'ouest";
-  }else if (name == "NU"){
-    return "Le Nunavut";
-  }else if (name == "ON"){
-    return "L'Ontario";
-  }else if (name == "PE"){
-    return "L'Île du prince Eduard";
-  }else if (name == "QC"){
-    return "Le Québec";
-  }else if (name == "SK"){
-    return "La Saskatchewan";
-  }else{
-    return "Le Yukon";
-  }
-
-}
-
-function trouver_le_nom_de_la_province_avec_article_de(name){
-  if (name == "AB"){
-    return "de l'Alberta";
-  }else if (name == "BC"){
-    return "de la Colombie-Britannique";
-  }else if (name == "MB"){
-    return "du Manitoba";
-  }else if (name == "NB"){
-    return "du Nouveau-Brunswick";
-  }else if (name == "NL"){
-    return "de Terre-neuve";
-  }else if (name == "NS"){
-    return "de la Nouvelle-Écosse";
-  }else if (name =="NT"){
-    return "des Territoires du Nord d'ouest";
-  }else if (name == "NU"){
-    return "du Nunavut";
-  }else if (name == "ON"){
-    return "de l'Ontario";
-  }else if (name == "PE"){
-    return "de l'Île du prince Eduard";
-  }else if (name == "QC"){
-    return "du Québec";
-  }else if (name == "SK"){
-    return "de la Saskatchewan";
-  }else{
-    return "du Yukon";
-  }
-
-}
 
   // Add chords.
   svg.selectAll("path.chord")
@@ -222,6 +162,7 @@ function trouver_le_nom_de_la_province_avec_article_de(name){
     //j = 1 right diagramm (province de destination)
   // Add the group label (but only for large groups, where it will fit).
   // An alternative labeling mechanism would be nice for the small groups.
+
   g.append("svg:text")
   .attr("x", 6)
   .attr("dy", 15)
@@ -251,8 +192,9 @@ function trouver_le_nom_de_la_province_avec_article_de(name){
 
   function remove_first_diagram(){
     les_diagrams = $(".sibling-1");
-    les_diagrams.first().appendTo(".second-diagram");
-    les_diagrams.last().appendTo("section.main");
+    //console.log(les_diagrams);
+    les_diagrams.first().appendTo(".origine");
+    les_diagrams.last().appendTo(".destination");
   }
  
   // Memoize the specified province, computing a unique id.
