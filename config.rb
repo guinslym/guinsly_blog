@@ -32,6 +32,9 @@ end
 
 page "/feed.xml", layout: false
 
+# silence i18n warning
+::I18n.config.enforce_available_locales = false
+
 ###
 # Compass
 ###
@@ -78,6 +81,9 @@ page "/feed.xml", layout: false
 #     "Helping"
 #   end
 # end
+
+activate :directory_indexes
+
 
 set :css_dir, 'stylesheets'
 
