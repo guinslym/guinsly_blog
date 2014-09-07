@@ -61,7 +61,7 @@ var svg = d3.select("section.origine").selectAll("div")
  
 
 // Load our data file…
-d3.csv("https://gist.githubusercontent.com/guinslym/c31add58ee6550cf77cc/raw/367ce6cfa123f8e2e1f7db82e2742b0757d15444/interprovince.csv", function(data) {
+d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd1ca4ddf34e01789d4326c4e1eab49e0fa2d50/interprovince.csv", function(data) {
   var provinces = {},
   array = [],
   n = 0;
