@@ -31,6 +31,7 @@ activate :blog do |blog|
 end
 
 activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '
+#ignore "/blog/2014-09-03-migration-interprovinciale-au-canada-en-2013.html"
 
 page "/feed.xml", layout: false
 

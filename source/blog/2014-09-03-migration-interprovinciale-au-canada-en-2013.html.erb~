@@ -21,7 +21,7 @@ published: false
 <div class="row">
   <div class="">
     <h2>Migration</h2>
-    <p>J'ai pris une année sabbatique pour pouvoir m'enrichir culturellement en allant visiter l'Ouest canadien. Du Québec jusqu'en Colombie-britannique. J'ai fait des découvertes et des rencontres inoubliables. À mon grand étonnement j'ai fait plusieurs rencontrent d'ontariens dans chaque province alors je me suis demander quel est la répartition des migrants au Canada. Alors, j'ai créer une <a target="_blank" href="http://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es_statistiques">représentation graphique de données statistiques</a> ou tout simplement de la <a target="_blank" href="http://en.wikipedia.org/wiki/Data_visualization"> Data visualization.</a></p>
+    <p>J'ai pris une année sabbatique pour pouvoir m'enrichir culturellement en allant visiter l'Ouest canadien. Du Québec jusqu'en Colombie-britannique. J'ai fait des découvertes et des rencontres inoubliables. À mon grand étonnement j'ai fait plusieurs rencontrent d'ontariens dans chaque province alors je me suis demander quel est la répartition des migrants au Canada. Alors, j'ai créer une <a href="http://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es_statistiques">représentation graphique de données statistiques</a> ou tout simplement de la <a href="http://en.wikipedia.org/wiki/Data_visualization"> Data visualization.</a></p>
     <p>Je vais tenté par cette représentation graphique de données statistiques de répondre à ces questions que je me suis posé:</p>
     <ul>
       <li>
@@ -71,7 +71,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 <div class="queFaire">
   <div class="row">
     <h2>Comment s'est fait?</h2>
-    <p>J'ai voulu apprendre <a target="_blank" href="http://d3js.org/">d3.js</a> alors forte de ma compréhension de cette <a target="_blank" href="https://github.com/mbostock/d3/wiki/Gallery"> librairie</a> pour les diagrammes à bandes, j'ai voulu en apprendre d'avantage en expérimentant un des diagrammes le les plus complexe à réaliser: <a target="_blank" href="http://bl.ocks.org/mbostock/4062006">Le diagramme a Cord</a>. </p>
+    <p>J'ai voulu apprendre <a href="http://d3js.org/">d3.js</a> alors forte de ma compréhension de cette <a href="https://github.com/mbostock/d3/wiki/Gallery"> librairie</a> pour les diagrammes à bandes, j'ai voulu en apprendre d'avantage en expérimentant un des diagrammes le les plus complexe à réaliser: <a href="http://bl.ocks.org/mbostock/4062006">Le diagramme a Cord</a>. </p>
 
     <p>J'ai tout d'abord fait une application ruby permettant d'extraire les données nécessaires pour pouvoir faire ces diagrammes</p>
     <h4>Ce qu'il faut savoir</h4>
@@ -94,8 +94,8 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 
 <h2>Liens utiles</h2>
 <ul>
-  <li><a target="_blank" href="http://d3js.org/">d3.js</a></li>
-  <li><a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">Migrants interprovinciaux, selon la province ou territoire d'origine et de la destination</a></li>
+  <li><a href="http://d3js.org/">d3.js</a></li>
+  <li><a href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">Migrants interprovinciaux, selon la province ou territoire d'origine et de la destination</a></li>
 </ul>
   </div>
 </div>
@@ -107,18 +107,16 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
   </div>
 </footer>
 <script>
-/* here are two different ways to do this */
-//using jquery:
-$(document).ready(function(){
-  $('#link_other a').attr('target', '_blank');
-});
-
-// not using jquery
-window.onload = function(){
-  var anchors = document.getElementById('link_other').getElementsByTagName('a');
-  for (var i=0; i<anchors.length; i++){
-    anchors[i].setAttribute('target', '_blank');
-  }
+jQuery(document).ready(function(){
+    target_luar();
+});    
+function target_luar(){
+    try{
+        if(top.location != location) {
+            jQuery("a[href^='http']")
+              .not("[href*='"+location.host+"']")
+              .attr('target','_blank');
+        }
+    } catch(err) { }
 }
-// jquery is prettier. :-)
 </script>
