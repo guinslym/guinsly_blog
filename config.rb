@@ -30,6 +30,8 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
+activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '
+
 page "/feed.xml", layout: false
 
 # silence i18n warning
