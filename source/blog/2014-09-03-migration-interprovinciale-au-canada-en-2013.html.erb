@@ -75,13 +75,12 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
     <h2>Comment s'est fait?</h2>
     <p>J'ai voulu apprendre <a target="_blank" href="http://d3js.org/">d3.js</a> alors forte de ma compréhension de cette <a target="_blank" href="https://github.com/mbostock/d3/wiki/Gallery"> librairie</a> pour les diagrammes à bandes, j'ai voulu en apprendre d'avantage en expérimentant un des diagrammes le les plus complexe à réaliser: <a target="_blank" href="http://bl.ocks.org/mbostock/4062006">Le diagramme a Cord</a>. </p>
 
-    <p>J'ai tout d'abord fait une application ruby permettant d'extraire les données nécessaires pour pouvoir faire ces diagrammes</p>
+    <p>J'ai tout d'abord fait une application ruby permettant d'extraire les données nécessaires pour pouvoir faire ces diagrammes. Les données brutes ont été acquis sur le site de <a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">statistique canada</a>. Vous pourrez trouver et télécharger l'ensemble des fichiers permettant de faire le graphiques sur mon <a href="https://github.com/guinslym/interprovincial" target="_blank">Github.</a></p>
     <h4>Ce qu'il faut savoir</h4>
     <ul>
       <li class="premier">Les matrices <ul><li>pour les diagrammes a corde il faut avoir une compréhension minimale des matrices. Parce qu'il faudra représenter les données sous forme de matrice pour pouvoir créer les cordes.</li></ul> </li>
       <li class="premier">d3.js <ul><li>Oui ça a l'air bête mais il faut quand même avoir une habilité avec cette librairie sinon bonjour les maux de têtes :(</li></ul></li>
     </ul>
-    <p>Vous pourrez trouvez l'emsemble des fichiers permettant de faire les graphiques sur mon github.</p>
   </div>
 </div>
 
@@ -94,13 +93,14 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
  
 <p>J'ai fait aussi plusieurs rencontres de migrants qui travaillaient dans leur province de destination mais qui n'étaient pas officiellement résident de la province. Il se pourrait qu'ils soient qualifiés pour être résident mais qu'ils n'ont pas fait de demande non plus.</p>
 
-<h2>Liens utiles</h2>
+<h2>Liens utiles et Références</h2>
 <ul>
   <li><a target="_blank" href="http://d3js.org/">d3.js</a></li>
   <li><a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">Migrants interprovinciaux, selon la province ou territoire d'origine et de la destination</a></li>
-</ul>
+  </ul>
   </div>
 </div>
+
 
 <footer>
   <div class="row">
@@ -112,7 +112,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 /* here are two different ways to do this */
 //using jquery:
 $(document).ready(function(){
-  $('body').attr('target', '_blank');
+  $('a').attr('target', '_blank');
 });
 
 
