@@ -11,12 +11,14 @@ published: false
 <div class="header">
   <div class="row">
     <div class="large-12 columns">
-      <h1>Migration au Canada</h1>
+      <h1>La Migration Interprovinciale au Canada en 2013</h1>
     </div>
   </div>
 </div>
 
 <div class="row text-center"><img src="http://i121.photobucket.com/albums/o205/guinslym/personal-site-and-blog/650px-Political_map_of_Canada_zps1373fb64.png" alt="Image représentants les provinces du Canada"></div>
+
+
 
 <div class="row">
   <div class="">
@@ -79,7 +81,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
       <li class="premier">Les matrices <ul><li>pour les diagrammes a corde il faut avoir une compréhension minimale des matrices. Parce qu'il faudra représenter les données sous forme de matrice pour pouvoir créer les cordes.</li></ul> </li>
       <li class="premier">d3.js <ul><li>Oui ça a l'air bête mais il faut quand même avoir une habilité avec cette librairie sinon bonjour les maux de têtes :(</li></ul></li>
     </ul>
-    <p>Vous pourrez trouvez une application rails sur mon github prochainement pour la création de ce diagramme.</p>
+    <p>Vous pourrez trouvez l'emsemble des fichiers permettant de faire les graphiques sur mon github.</p>
   </div>
 </div>
 
@@ -110,15 +112,8 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 /* here are two different ways to do this */
 //using jquery:
 $(document).ready(function(){
-  $('#link_other a').attr('target', '_blank');
+  $('body').attr('target', '_blank');
 });
 
-// not using jquery
-window.onload = function(){
-  var anchors = document.getElementById('link_other').getElementsByTagName('a');
-  for (var i=0; i<anchors.length; i++){
-    anchors[i].setAttribute('target', '_blank');
-  }
-}
-// jquery is prettier. :-)
+
 </script>
