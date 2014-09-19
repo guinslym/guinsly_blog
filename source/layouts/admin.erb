@@ -11,21 +11,7 @@
   <%= stylesheet_link_tag style %>
 <% end %>
 
-	<script>
-var el = document.querySelector(".myelement");
 
-
-el.addEventListener("animationstart", function() {}, false);
-el.addEventListener("animationend", function() {el.onclick = navigateTo;}, false);
-el.addEventListener("animationiteration", function() {}, false);
-
-el.addEventListener( 'webkitTransitionEnd', 
-function( event ) { alert( "Finished transition!" ); }, false );
-
-function navigateTo() {
-  location.href=this.href;
-}
-	</script>
 
 <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js", "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js", "migration_interprovinciale/pro_json.js",  "migration_interprovinciale/provinces.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js" %>
 

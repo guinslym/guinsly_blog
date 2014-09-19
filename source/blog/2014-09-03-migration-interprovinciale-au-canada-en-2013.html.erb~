@@ -190,7 +190,8 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 <footer>
   <div class="row">
     
-  <h1><a href="/">Au revoir!!!</a></h1>
+  <h1>Au revoir!!!</h1>
+  <h4><a href="/">-- retour au blog --</a></h4>
   </div>
 </footer>
 
@@ -199,10 +200,6 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 //using jquery:
 $(document).ready(function(){
   $('a').attr('target', '_blank');
-
- $(function(){
-        $(".player").mb_YTPlayer();
-      });
 });
 
 
