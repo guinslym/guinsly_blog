@@ -130,8 +130,13 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
   .style("fill", function(d) { return fill(d.source.value.nbr_pourcentage); })
   .style("stroke", function(d) { return d3.rgb(fill(d.source.value.nbr_pourcentage)).darker(); })
   .attr("d", chord)
-  .append("svg:title")
-  .text(function(d) { return d.source.value +  " résidents " + trouver_le_nom_de_la_province_avec_article_de(d.source.value.provOrigin.name) + " résident maintenant en " +  d.source.value.destination.name ; });
+  .append("svg:title");
+/*  .text(function(d) {
+    //return d.source.value +  " résidents " + trouver_le_nom_de_la_province_avec_article_de(d.source.value.provOrigin.name) + " résident maintenant en " +  d.source.value.destination.name ;
+  console.log(d);
+  return d.source.value.destination.name + ' accueillent (owes) '+ d.source.value + ' migrant ' + d.source.value.provOrigin.name + '$' + "\nautrement dit, \n" + d.source.value + ' résident ' + d.source.value.provOrigin.name + " s'établissent dorénavant en " + d.source.value.destination.name; 
+  
+  });*/
    
   // Add groups.
   var g = svg.selectAll("g.group")
@@ -140,7 +145,6 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
   .attr("class", "group")
    .on("mouseover", mouseover);//on and out of the circle
    
-
   // Add the group arc.
   g.append("svg:path")
   .style("fill", function(d) { return fill(array[d.index].nbr_pourcentage); })
@@ -180,6 +184,7 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
     })
     .on("mouseout", 
       function (d) { 
+        console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         //console.log('mouseOut');
        });
 

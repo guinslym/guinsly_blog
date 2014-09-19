@@ -61,7 +61,7 @@ var svg = d3.select("section.origine").selectAll("div")
  
 
 // Load our data file…
-d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd1ca4ddf34e01789d4326c4e1eab49e0fa2d50/interprovince.csv", function(data) {
+d3.csv("/javascripts/migration_interprovinciale/interprovince.csv", function(data) {
   var provinces = {},
   array = [],
   n = 0;
@@ -195,7 +195,10 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
     //console.log(les_diagrams);
     les_diagrams.first().appendTo(".origine");
     les_diagrams.last().appendTo(".destination");
-  }
+
+
+    //other
+    }
  
   // Memoize the specified province, computing a unique id.
   function country(d) {

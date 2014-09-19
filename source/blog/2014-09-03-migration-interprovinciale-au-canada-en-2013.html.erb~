@@ -150,6 +150,15 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 //$("#les_provinces_selection").val(2);
 
       });
+
+
+
+$(document).ready(function(){
+var value= "6";
+$('#les_provinces_selection [value='+value+']').prop('selected', true);
+value= "7";
+$('#les_provinces_selection [value='+value+']').prop('selected', true);
+});
     </script> 
 
   </div>
