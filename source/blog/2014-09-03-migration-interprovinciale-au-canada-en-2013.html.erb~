@@ -39,7 +39,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 
 
 <section class="main row" style="text-align:center">
-  <div class="main-diagram"> <h2>Quelle province a accueillie le plus de migrants  en 2013 ? L'alberta owes</h2></div>
+  <div class="main-diagram"> <h2>Quelle province a accueillie le plus de migrants  en 2013 ?</h2></div>
 </section>
 
 <section class="destination" style="text-align:center;"></section>
@@ -48,12 +48,12 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 <div class="row">
   <div class="panel">
     <h2>Terre Promise!!!</h2>
-    <p>On constate que l'Alberta et l'Ontario sont les provinces de destination les plus convoités. À eux seul ils s'accaparent près de la moitìé des migrants. </p>
+    <p>On constate que l'Alberta et l'Ontario sont les provinces de destination les plus convoitées. À eux seul ils s'accaparent près de la moitìé des migrants. </p>
   </div>
 </div>
 
 <section class="row deuxieme" style="text-align:center">
-  <div class="second-diagram"><h2>Quelle province a vu le plus de ses résidents s'établir dans une autre province en 2013 ? L'ontario is owes</h2></div>
+  <div class="second-diagram"><h2>Quelle province a vu le plus de ses résidents s'établir dans une autre province en 2013 ?</h2></div>
 </section>
 
 <section class="origine" style="text-align:center;"></section>
@@ -150,15 +150,6 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 //$("#les_provinces_selection").val(2);
 
       });
-
-
-
-$(document).ready(function(){
-var value= "6";
-$('#les_provinces_selection [value='+value+']').prop('selected', true);
-value= "7";
-$('#les_provinces_selection [value='+value+']').prop('selected', true);
-});
     </script> 
 
   </div>
@@ -169,7 +160,7 @@ $('#les_provinces_selection [value='+value+']').prop('selected', true);
     <h2>Comment s'est fait?</h2>
     <p>J'ai voulu apprendre <a target="_blank" href="http://d3js.org/">d3.js</a> alors forte de ma compréhension de cette <a target="_blank" href="https://github.com/mbostock/d3/wiki/Gallery"> librairie</a> pour les diagrammes à bandes, j'ai voulu en apprendre d'avantage en expérimentant un des diagrammes le les plus complexe à réaliser: <a target="_blank" href="http://bl.ocks.org/mbostock/4062006">Le diagramme a Cord</a>. </p>
 
-    <p>J'ai tout d'abord fait une application ruby permettant d'extraire les données nécessaires pour pouvoir faire ces diagrammes. Les données brutes ont été acquis sur le site de <a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">statistique canada</a>. Vous pourrez trouver et télécharger l'ensemble des fichiers permettant de faire le graphiques sur mon <a href="https://github.com/guinslym/interprovincial" target="_blank">Github.</a></p>
+    <p>J'ai tout d'abord fait une application ruby permettant d'extraire les données nécessaires pour pouvoir faire ces diagrammes. Les données brutes ont été acquis sur le site de <a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">statistique canada</a>. </p>
     <h4>Ce qu'il faut savoir</h4>
     <ul>
       <li class="premier">Les matrices <ul><li>pour les diagrammes a corde il faut avoir une compréhension minimale des matrices. Parce qu'il faudra représenter les données sous forme de matrice pour pouvoir créer les cordes.</li></ul> </li>
