@@ -22,7 +22,7 @@ published: false
 <div class="row">
   <div class="">
     <h2>Migration</h2>
-    <p>J'ai pris une année sabbatique pour pouvoir m'enrichir culturellement en allant visiter l'Ouest canadien. Du Québec jusqu'en Colombie-britannique. J'ai fait des découvertes et des rencontres inoubliables. À mon grand étonnement j'ai fait plusieurs rencontrent d'ontariens dans chaque province alors je me suis demander quel est la répartition des migrants au Canada. Alors, j'ai créer une <a target="_blank" href="http://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es_statistiques">représentation graphique de données statistiques</a> ou tout simplement de la <a target="_blank" href="http://en.wikipedia.org/wiki/Data_visualization"> Data visualization.</a></p>
+    <p>J'ai pris une année sabbatique pour pouvoir m'enrichir culturellement en allant visiter l'Ouest canadien. Du Québec jusqu'en Colombie-britannique. J'ai fait des découvertes et des rencontres inoubliables. À mon grand étonnement j'ai fait plusieurs rencontrent d'ontariens dans chaque province alors je me suis demander quel est la répartition des migrants au Canada. Alors, j'ai créer une <a target="_blank" href="http://fr.wikipedia.org/wiki/Repr%C3%A9sentation_graphique_de_donn%C3%A9es_statistiques">représentation graphique de données statistiques</a> ou tout simplement de la <a target="_blank" href="http://en.wikipedia.org/wiki/Data_visualization"> Data visualization</a> en anglais. Ce courant comptemporain, la data visualization, est une manière non conventionnelle de représenter les données pour éveiller nôtre côté artistique .</p>
     <p>Je vais tenté par cette représentation graphique de données statistiques de répondre à ces questions que je me suis posé:</p>
     <ul>
       <li>
@@ -32,7 +32,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
     </ul>
 
     <h3>Comment fonctionne le diagramme à corde</h3>
-    <p>Si vous passer votre curseur sur une arc, Il y aura une indication sur le nombre de résident que cette province a accueillie. Par exemple pour "ON", <em>«En 2013 l'Ontario a accueillie 69 700 migrants»</em>. Les résultats sont toujours arrondis. Pour les données brutes de calcul vous pouvez vous réferer à la section Donnée Brutes ci-bas et sélectionner une province ou vous rendre directement sur la page web de <a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">statistique canada</a> .</p>
+    <p>Si vous passer votre curseur sur une arc, Il y aura une indication sur le nombre de résident que cette province a accueillie. Par exemple pour "ON", <em>«En 2013 l'Ontario a accueillie 69 700 migrants»</em>. Les résultats sont toujours arrondis. Pour les données brutes de calcul vous pouvez vous réferer à la section Donnée Brutes ci-bas et sélectionner une province ou vous rendre directement sur la page web de <a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">statistique canada</a>.</p>
 
  </div>
 </div>
