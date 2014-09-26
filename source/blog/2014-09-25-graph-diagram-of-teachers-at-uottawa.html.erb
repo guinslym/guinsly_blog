@@ -127,7 +127,7 @@ body{
           .attr("width", width)
           .attr("height", height);
 
-      d3.json("professeurs.json", function(error, graph) {
+      d3.json("https://gist.githubusercontent.com/guinslym/5fd33b30b8cb60feb0fe/raw/ca85f099cc8b69e616cb66fdcb6511758a50a820/professeurs.json", function(error, graph) {
       
         force.nodes(graph.nodes)
           .links(graph.links)
