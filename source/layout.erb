@@ -5,210 +5,114 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <title>Blog de Guinsly Mondésir<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <style>
 
+  body {
+    background-color: #fff;
+    color: #333;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+h2{
+ font-family: 'Pacifico', cursive;
+}
 
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
-body {
-  padding: 0 100px 100px;
-  background-color: #CDE !important;
+html, body {
+    background: none repeat scroll 0 0 #e5e5e5;
+    font-family: Lato,sans-serif;
+    font-weight: 400;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+html, body {
+    min-height: 100%;
+    background-color: #CCDDEE;
+}
+
+#article div.well {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #fff;
+    border-color: -moz-use-text-color -moz-use-text-color #ccc;
+    border-image: none;
+    border-radius: 13px;
+    border-style: none none solid;
+    border-width: 0 0 2px;
+    box-shadow: none;
+    max-height: 100000px;
+    min-height: 63px;
+    padding: 20px;
+    position: relative;
+    transition: max-height 0.5s ease 0s;
+}
+
+#headerwrap {
+    background: url("http://www.basicoh.com/demo/try/assets/css/../img/header-bg.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    max-height: 550px;
+    padding-top: 0;
+    text-align: left;
+}
+
+
+
+
+#quote {
+    padding-bottom: 55px;
+    padding-top: 55px;
 }
 
 h1#header {
-  text-align: center;
-  padding: 50px;
-  font-size: 62px;
-  font-family: "Pacifico";
-  text-shadow: 0 2px 2px #3c77b3;
+    font-family: "Pacifico";
+    font-size: 62px;
+    padding: 50px;
+    text-align: center;
+    text-shadow: 0 2px 2px #3c77b3;
+}
+h1.text-primary {
+    color: #428bca;
 }
 
-.article-wrapper {
-  -moz-transition: width 0.4s;
-  -o-transition: width 0.4s;
-  -webkit-transition: width 0.4s;
-  transition: width 0.4s;
+#quote {
+    background-color: #5BC0DE;
 }
 
-article {
-  position: relative;
-  padding-left: 180px;
-  padding-right: 75px;
-  height: 150px;
-  margin-bottom: 30px;
-  background-color: #FFF;
-  -moz-border-radius: 150px;
-  -webkit-border-radius: 150px;
-  border-radius: 150px;
-  cursor: pointer;
+#footer {
+    background: none repeat scroll 0 0 #343434;
+    color: #f2f2f2;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
-article .img-wrapper {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  -moz-border-radius: 100px;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
-  background-color: #CDE;
-  padding: 10px;
-  z-index: 1000;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+#copyright {
+    background-color: #151515;
+    color: #f2f2f2;
+    padding-top: 15px;
 }
-article .img-wrapper img {
-  -moz-border-radius: 100px;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-  width: 150px;
-}
-article h1 {
-  height: 75px;
-  line-height: 75px;
-  font-size: 24px;
-  border-bottom: 2px solid #CDE;
-  color: #428bca;
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-}
-article p {
-  color: #888;
-}
-article a {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 100%;
-  line-height: 150px;
-  text-align: center;
-  width: 100%;
-  background-color: #FFF;
-  font-size: 48px;
-  font-style: italic;
-  opacity: 0;
-  color: #428bca !important;
-  -moz-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
-  text-decoration: none !important;
-  -moz-border-radius: 150px;
-  -webkit-border-radius: 150px;
-  border-radius: 150px;
-  font-family: "Pacifico";
-  text-shadow: 0 1px 1px #AAA;
-}
-article:hover .img-wrapper {
-  padding: 5px;
-  -moz-transform: rotate(5deg);
-  -ms-transform: rotate(5deg);
-  -webkit-transform: rotate(5deg);
-  transform: rotate(5deg);
-}
-article:hover .img-wrapper img {
-  width: 160px;
-}
-article:hover a {
-  opacity: 1;
-}
-
-.bloc article {
-  padding: 10px;
-  height: 225px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  margin-top: 75px;
-}
-.bloc article .img-wrapper {
-  position: relative;
-  top: -85px;
-  width: 170px;
-  left: inherit;
-  margin: auto;
-  margin-bottom: -100px;
-}
-.bloc article h1 {
-  font-size: 14px;
-  height: 37.5px;
-  line-height: 37.5px;
-}
-.bloc article p {
-  font-size: 12px;
-}
-.bloc article a {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  line-height: 255px;
+td{
+ padding: 10px;
 }
 </style>
   </head>
-  <body>
+ 
     
-    <div id="main" role="main" class="container">
-      <%= yield %>
-    </div>
+    
 
 
-    <div class="container">
-
-    <h1 id="header" class="text-primary">My Blog</h1>
 
 
-      <div class="row">
-
-    <aside>
-     
 
 
-<div class="container list-article">
+
 <!--
-  <div class="btn-group pull-right" id="switch-view">
-    <button class="btn btn-primary">
-      <span class="icon-th-large"></span>
-    </button>
-    <button class="btn btn-primary active">
-      <span class="icon-th-list"></span>
-    </button>
-  </div>
-  -->
-  <div class="clearfix"></div>
-  <div class="row">
-   <h2>Recent Articles</h2>
-
-    <% blog.articles[0...10].each do |article| %>
-        
-        
-        
-        <div class="col-xs-12 article-wrapper">
-          <article>
-            <%= link_to 'more', article %>
-            <div class="img-wrapper"><img src="http://placekitten.com/g/150/150" alt="" /></div>
-            <h1><%=  article.title.capitalize %></h1>
-            <p><%= article.date.strftime('%b %e') %></p>
-          </article>
-        </div>
-        
-  <% end %><!-- end of .each -->
-  </div>
-</div>
-
-
-
-
       <hr>
 
       <h2>Tags</h2>
@@ -231,18 +135,169 @@ article:hover a {
     </div>
 
 
-      </div><!-- fin row -->
-    </div><!-- fin container -->
+      </div>
+    </div>
+
+  </body>
+-->
+
+<body>
+<div id="main" role="main" class="container">
+      <%= yield %>
+    </div>
+
+
+
+  <section id="headerwrap">
+  <div class="jumbotron text-center">
+      <h1 class="text-primary" id="header">My Blog</h1>
+    </div>
+  </section>
+
+
+
+
+
+
+<section id="article">
+
+  <div class="container">
+  <h2>Most recent articles</h2>
+
+
+     <!-- begining of ruby each -->
+<% blog.articles[0...10].each do |article| %>
+    <div class="row">
+     
+      <div class="col-lg-offset-2 col-lg-8">
+       <div class="well">
+
+         <div class="row">
+           <div class="col-lg-12">
+	       <br>
+             <h3><%= link_to  article.title.titleize, article %></h3>
+	     <p class="text-muted"><%= article.date.strftime('%b %e') %></p>
+           </div>
+	</div>
+     </div>
+
+   </div><!-- offset-2 -->
+  </div>
+
+ <% end %><!-- end of .each -->
+  <!--- end of ruby each -->
+  
+
+
+  <hr>
+
+</div><!-- container -->
+
+
+
+
+
+
+
+
+
+
+
+<section id="other">
+  <div class="container">
+  <div class="row">
+   <div class="col-lg-5">
+     <!-- suggestion videos --> 
+  <h2>Latest like video</h2> 
+       <div class="well">
+	<h3>Music Information Retrieval Using Locality Sensitive Hashing</h3>
+<div class="embed-responsive embed-responsive-16by9">
+      <iframe allowfullscreen="" src="//www.youtube.com/embed/SghMq1xBJPI" class="embed-responsive-item"></iframe>
+    </div>
+
+     </div>
+
+   </div>
+
+
+
+   <div class="col-lg-7">
+     <h2>Mon coup de coeur sur le web</h2> 
+    <!-- List suggestions d'articles --> 
+
+       <div class="well">
+	<h3> </h3>
+        <table>
+          <tr>
+            <td><a href="#">i  Elit asperiores praesentium repudiandae sapiente?</a></td><td><button type="button" class="btn btn-xs btn-primary">python</button>   <button type="button" class="btn btn-xs btn-info">scientific</button> <button type="button" class="btn btn-xs btn-warning">data-science</button></td>
+          </tr>
+<tr>
+            <td><a href="#">i  Elit asperiores praesentium repudiandae sapiente? </a></td><td> <span class="badge">scientific</span></td>
+          </tr>
+<tr>
+            <td><a href="#">i  Elit asperiores praesentium repudiandae sapiente?</a></td><td> <span class="badge">scientific</span></td>
+          </tr>
+<tr>
+            <td><a href="#">i  Elit asperiores praesentium repudiandae sapiente?</a></td><td> <span class="badge">scientific</span></td>
+          </tr>
+<tr>
+            <td><a href="#">i  Elit asperiores praesentium repudiandae sapiente?</a></td><td> <span class="badge">scientific</span></td>
+          </tr>
+        </table>
+     </div>
+   </div>
    
 
-   <script>
-// JS only for the switch
-$(function(){
-  $("#switch-view").click(function(){
-    $(this).find("button").toggleClass("active");
-    $(".article-wrapper").toggleClass("bloc col-xs-12 col-xs-4");
-  });
-});
-</script> 
-  </body>
+
+
+
+ </div><!-- fin row -->
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="quote">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-lg-offset-5">
+			
+						<!-- End of button-full -->
+					</div><!-- /span2 -->
+				</div><!-- /row -->
+			</div><!-- /container -->
+		</div>
+
+<div id="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9">
+						<p>Copyright 2013 - www.mongex.info</p>
+					</div>
+					<div class="col-lg-3">
+						<p>Home</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+</section>
+  
+</body>
+
+
 </html>
