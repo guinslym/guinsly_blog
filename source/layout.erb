@@ -271,7 +271,7 @@ h1.text-primary {
 	<% data.links.liens.each do |n| %>
            <% if n.date %>
           <tr>
-            <td><h4 class="links"><a href="<%= n.link %>" target="_blank"><%= n.title.titleize %> </a>&nbsp; <span class="badge"><%= n.categorie %></span></h4></td>
+            <td><h4 class="links"><a href="<%= n.link %>" target="_blank"><%= n.title %> </a>&nbsp; <span class="badge"><%= n.categorie %></span></h4></td>
           </tr>
          <% end %>
 	<% end %>
@@ -287,27 +287,6 @@ h1.text-primary {
 </div>
 </section>
 
-
-
-<!--
-
-<div id="profile">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4">
-						<a class="thumbnail wow slideInLeft animated animated" href="#" style="visibility: visible;">
-          <img width="408px" height="287px" class="image-perso" alt="Picture of Guinsly Mondésir" src="http://i121.photobucket.com/albums/o205/guinslym/personal-site-and-blog/1379439_527803443957259_1306009396_n_zpsd3fb9136.jpg">
-        </a>
-						
-					</div>
-                                        <div class="col-lg-8 vcenter">
-					  <p>I'm a web developer and a UX designer with experience using Ruby, javascript and php. I have a degree in computer programming and I'm doing my master in Library and Information studies at University of Ottawa. When I'm not studying or coding the next Big thing, I'm canoying, Meetuping, or having fun with pals in a coffeeshop.  </p>
-						
-					</div>
-				</div>
-			</div>
-		</div>
--->
 <style>
 #bio{
   min-height: 200px;
