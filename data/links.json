@@ -3,11 +3,17 @@
      {	"link": "https://github.com/Swordfish90/cool-retro-term", 
 	"title": " good looking terminal emulator which mimics the old cathode display...",
         "categorie": "code"},
-	{ "link" : "http://www.internetcommerce.org/undue-process/",
-          "title": "Undue Process: Nearly Five Thousand Domains Transferred Under Sealed Court Order",
-          "categorie": "law"},
+	{ "link" : "http://www.slate.com/blogs/future_tense/2014/10/02/university_of_arizona_researchers_analyze_food_references_in_twitter_data.html",
+          "title": "Using Tweets to Predict Which States Are Overweight",
+          "categorie": "data-analysis"},
     { "link" : "http://3drobotics.com/iris-plus/",
           "title": "IRIS+",
           "categorie": "drone"}
+    { "link" : "http://well.blogs.nytimes.com/2014/10/01/how-exercise-may-protect-against-depression/?src=me",
+          "title": "How Exercise May Protect Against Depression",
+          "categorie": "health"},
+  { "link" : "http://www.wired.com/2014/10/code-published-for-unfixable-usb-attack/",
+          "title": "The Unpatchable Malware That Infects USBs Is Now on the Loose",
+          "categorie": "health"},
   ]
 }
