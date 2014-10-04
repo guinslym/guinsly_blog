@@ -267,7 +267,7 @@ h1.text-primary {
        <div class="well">
         <table>
 	<% data.links.liens.each do |n| %>
-           <% if Date.parse(n.date).eql? Date.today %>
+           <% if n.date %>
           <tr>
             <td><h4 class="links"><a href="<%= n.link %>" target="_blank"><%= n.title.titleize %> </a>&nbsp; <span class="badge"><%= n.categorie %></span></h4></td>
           </tr>
