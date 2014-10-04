@@ -34,6 +34,7 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.2.1)
+    ffaker (1.25.0)
     ffi (1.9.3)
     haml (4.0.5)
       tilt
@@ -134,6 +135,7 @@ PLATFORMS
 
 DEPENDENCIES
   builder (~> 3.0)
+  ffaker
   middleman (~> 3.3.5)
   middleman-blog (~> 3.5.3)
   middleman-livereload
