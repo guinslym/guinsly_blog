@@ -8,12 +8,12 @@
           "categorie": "data-analysis"},
     { "link" : "http://3drobotics.com/iris-plus/",
           "title": "IRIS+",
-          "categorie": "drone"}
+          "categorie": "drone"},
     { "link" : "http://well.blogs.nytimes.com/2014/10/01/how-exercise-may-protect-against-depression/?src=me",
           "title": "How Exercise May Protect Against Depression",
           "categorie": "health"},
   { "link" : "http://www.wired.com/2014/10/code-published-for-unfixable-usb-attack/",
           "title": "The Unpatchable Malware That Infects USBs Is Now on the Loose",
-          "categorie": "health"},
+          "categorie": "health"}
   ]
 }
