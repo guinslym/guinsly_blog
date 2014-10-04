@@ -19,6 +19,14 @@
   { "link" : "http://www.wired.com/2014/10/code-published-for-unfixable-usb-attack/",
           "title": "The Unpatchable Malware That Infects usbs Is Now on the Loose",
           "categorie": "security",
+        "date": "2014-10-04"},
+  { "link" : "https://www.streak.com/docsend",
+          "title": "Send and track documents from Gmail.",
+          "categorie": "gmail extension",
+        "date": "2014-10-04"},
+  { "link" : "http://startupclass.samaltman.com/courses/lec04/",
+          "title": "How to Start a Startup",
+          "categorie": "entrepreneuship",
         "date": "2014-10-04"}
   ]
 }
