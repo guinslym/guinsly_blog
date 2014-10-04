@@ -261,15 +261,17 @@ h1.text-primary {
 
 
    <div class="col-lg-7">
-     <h2>Mon coup de coeur sur le web</h2> 
+     <h2>Mon coup de coeur sur le web (<%= Date.today %>)</h2> 
     <!-- List suggestions d'articles --> 
 
        <div class="well">
         <table>
 	<% data.links.liens.each do |n| %>
+           <% if Date.parse(n.date).eql? Date.today %>
           <tr>
             <td><h4 class="links"><a href="<%= n.link %>" target="_blank"><%= n.title.titleize %> </a>&nbsp; <span class="badge"><%= n.categorie %></span></h4></td>
           </tr>
+         <% end %>
 	<% end %>
         </table>
      </div>
