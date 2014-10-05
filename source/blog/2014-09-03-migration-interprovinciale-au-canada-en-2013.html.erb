@@ -1,7 +1,7 @@
 ---
 title: la migration interprovinciale au canada en 2013
 date: 2014-09-03 00:55 UTC
-tags: statistique, canada, d3.js, data-visualization, ruby
+tags: d3.js, data-visualization, ruby
 layout: admin
 published: false
 ---
@@ -182,6 +182,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 <ul>
   <li><a target="_blank" href="http://d3js.org/">d3.js</a></li>
   <li><a target="_blank" href="http://www5.statcan.gc.ca/cansim/a26?id=0510045&p2=9&tabMode=dataTable&p1=-1&retrLang=fra&srchLan=-1&lang=fra">Migrants interprovinciaux, selon la province ou territoire d'origine et de la destination</a></li>
+  <li><a href="http://upload.wikimedia.org/wikipedia/commons/1/14/Political_map_of_Canada.png" target="_blank">Image (carte du canada) Wikimedia Commons par Kaveh</a></li>
   </ul>
   </div>
 </div>
@@ -191,7 +192,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
   <div class="row">
     
   <h1>Au revoir!!!</h1>
-  <h4><a href="/">-- retour au blog --</a></h4>
+  <h4><a href="/" class="blog">-- retour au blog --</a></h4>
   </div>
 </footer>
 
@@ -199,7 +200,7 @@ Quelle province a accueillie le plus de migrants en 2013 ?</li>
 /* here are two different ways to do this */
 //using jquery:
 $(document).ready(function(){
-  $('a').attr('target', '_blank');
+  $('a:not(.blog)').attr('target', '_blank');
 });
 
 
