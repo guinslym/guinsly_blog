@@ -6,6 +6,7 @@
     <title>Blog de Guinsly Mondésir<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="/stylesheets/animate.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -360,7 +361,8 @@ blockquote{
                                           <p>Copyright 2014 <!--- <a href="http://guinsly-middleman.herokuapp.com/" target="_blank">My profile </a> --></p>
 					</div>
 					<div class="col-lg-3">
-						<p><!-- Home --></p>
+                                          <p><a href="/feed.xml"><i class="fa fa-rss"></i> </a> | <a href="https://github.com/guinslym" target="_blank"> <i class="fa fa-github"></i>
+                                          </a></p>
 					</div>
 				</div>
 			</div>
