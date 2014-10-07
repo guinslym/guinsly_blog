@@ -115,7 +115,7 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
                       "Nouveau Brunswick", "Terre-Neuve-et-Labrador",
                       "Nouvelle-Écosse", "Nunavut", "Ontario", "Île du Prince-Éduard",
                       "Québec", "Saskatchewan", "Yukon"];
-  var abbreviations = ["AB", "BC", "MB",
+  var abbreviations = ["AB", "CB", "MB",
                       "NB", "NL", "NS",
                       "NT", "NU", "ON",
                       "PE","QC", "SK", "YK"];
