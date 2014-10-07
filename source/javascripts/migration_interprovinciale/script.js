@@ -119,8 +119,41 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
                       "NB", "NL", "NS",
                       "NT", "NU", "ON",
                       "PE","QC", "SK", "YK"];
-//fonction find the province name
 
+//fonction find the province name
+function trouver_la_province_avec_article_le(prov){
+  console.log(prov);
+ if (prov == 'AB'){return "l'Alberta";}
+ else if(prov == 'CB'){ return 'la Colombie-britannique';} 
+ else if(prov == 'MB'){ return 'le Manitoba';} 
+ else if(prov == 'NB'){ return 'le Nouveau Brunswick';} 
+ else if(prov == 'NL'){ return 'Terre-Neuve-et-Labrador';} 
+ else if(prov == 'NS'){ return 'la Nouvelle-Écosse';} 
+ else if(prov == 'NT'){ return 'les Térritoires du Nord-Ouest';} 
+ else if(prov == 'NU'){ return 'le Nunavut';} 
+ else if(prov == 'ON'){ return "l'Ontario";} 
+ else if(prov == 'PE'){ return "l'Île du Prince-Éduard";} 
+ else if(prov == 'QC'){ return 'le Québec';} 
+ else if(prov == 'SK'){ return 'la Saskatchewan';} 
+ else { return 'le Yukon';} 
+}
+
+function trouver_la_province_avec_article_de(prov){
+  console.log(prov);
+ if (prov == 'AB'){return "de l'Alberta";}
+ else if(prov == 'CB'){ return 'de la Colombie-britannique';} 
+ else if(prov == 'MB'){ return 'du Manitoba';} 
+ else if(prov == 'NB'){ return 'du Nouveau Brunswick';} 
+ else if(prov == 'NL'){ return 'de Terre-Neuve-et-Labrador';} 
+ else if(prov == 'NS'){ return 'de la Nouvelle-Écosse';} 
+ else if(prov == 'NT'){ return 'des Térritoires du Nord-Ouest';} 
+ else if(prov == 'NU'){ return 'du Nunavut';} 
+ else if(prov == 'ON'){ return "de l'Ontario";} 
+ else if(prov == 'PE'){ return "de l'Île du Prince-Éduard";} 
+ else if(prov == 'QC'){ return 'du Québec';} 
+ else if(prov == 'SK'){ return 'de la Saskatchewan';} 
+ else { return 'du Yukon';} 
+}
 
   // Add chords.
   svg.selectAll("path.chord")
@@ -145,6 +178,7 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
   .attr("class", "group")
    .on("mouseover", mouseover);//on and out of the circle
    
+   var affiche_texte = ''
   // Add the group arc.
   g.append("svg:path")
   .style("fill", function(d) { return fill(array[d.index].nbr_pourcentage); })
@@ -153,9 +187,15 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
   .append("svg:title")
   .text(function(d) { 
       if (j) {
-         return "En 2013, " + trouver_le_nom_de_la_province(array[d.index].name) + " " + "a accueillie" + " " + format(d.value) + " migrants"; 
+
+          affiche_texte = "En 2013, " + trouver_la_province_avec_article_le(array[d.index].name) + " " + "a accueillie" + " " + format(d.value) + " migrants"; 
+         return affiche_texte;
       }else{
-        return format(d.value) + " résidents " + trouver_le_nom_de_la_province_avec_article_de(array[d.index].name) + " ont changé \nde province de résidence "+ "en 2013 " ;
+        a  = abbreviations.indexOf(array[d.index].name);
+        //console.log( a + " <==> " + array[d.index].name + " <==> " + les_provinces_fr[a] + " <==> " + trouver_la_province(array[d.index].name));
+        affiche_texte = format(d.value) + " résidents " + trouver_la_province_avec_article_de(array[d.index].name) + " ont changé \nde province de résidence "+ "en 2013 " ;
+        //console.log(affiche_texte);
+        return affiche_texte;
       }
      
     });
