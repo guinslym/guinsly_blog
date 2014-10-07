@@ -111,19 +111,10 @@ d3.csv("https://gist.githubusercontent.com/guinslym/d81d1a7786a867b616c6/raw/8dd
   layout.matrix(matrix);
    
 
-  var les_provinces_fr = ["Alberta", "Colombie-britannique", "Manitoba",
-                      "Nouveau Brunswick", "Terre-Neuve-et-Labrador",
-                      "Nouvelle-Écosse", "Nunavut", "Ontario", "Île du Prince-Éduard",
-                      "Québec", "Saskatchewan", "Yukon"];
-  var abbreviations = ["AB", "CB", "MB",
-                      "NB", "NL", "NS",
-                      "NT", "NU", "ON",
-                      "PE","QC", "SK", "YK"];
-
 //fonction find the province name
 function trouver_la_province_avec_article_le(prov){
   console.log(prov);
- if (prov == 'AB'){return "l'Alberta";}
+ if (prov == 'AB'){return "L'Alberta";}
  else if(prov == 'CB'){ return 'la Colombie-britannique';} 
  else if(prov == 'MB'){ return 'le Manitoba';} 
  else if(prov == 'NB'){ return 'le Nouveau Brunswick';} 
