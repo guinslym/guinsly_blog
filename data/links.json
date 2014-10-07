@@ -27,6 +27,26 @@
   { "link" : "http://startupclass.samaltman.com/courses/lec04/",
           "title": "How to Start a Startup",
           "categorie": "entrepreneurship",
-        "date": "2014-10-04"}
+        "date": "2014-10-04"},
+  { "link" : "http://www.wired.com/2014/10/privacy-friendster/",
+          "title": "Not on a Social Network? You’ve Still Got a Privacy Problem",
+          "categorie": "vie privée",
+        "date": "2014-10-07"},
+  { "link" : "https://servicos.min-saude.pt/sico/faces/statistics.jsp",
+          "title": "Portugal released a webpage to see number of deaths",
+          "categorie": "health",
+        "date": "2014-10-07"},
+  { "link" : "http://www.npr.org/blogs/alltechconsidered/2014/10/06/345799830/the-forgotten-female-programmers-who-created-modern-tech",
+          "title": "The Forgotten Female Programmers Who Created Modern Tech",
+          "categorie": "society",
+        "date": "2014-10-07"},
+  { "link" : "http://www.cryptomuseum.com/index.htm",
+          "title": "Crypto Museum",
+          "categorie": "museum",
+        "date": "2014-10-07"},
+  { "link" : "http://www.airpair.com/angularjs?ti=#MxkrVCfYlQfeQLBy.99",
+          "title": "AngularJS Tutorial: A Comprehensive 10,000 Word Guide",
+          "categorie": "javascript library",
+        "date": "2014-10-07"}
   ]
 }
