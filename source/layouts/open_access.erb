@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= page_title %></title>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="open access en question">
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> 
+ <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<% stylesheets =  "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" , 'migration_interprovinciale/homer.css'
+%>
+    <style>
+      h1.question{
+        margin: 60px 0;
+        font-family: 'Roboto Condensed', sans-serif;
+      }
+      iframe,img{
+        margin-bottom: 70px;
+      }
+      h1.title{
+        margin-top: 60px;
+        margin-bottom: 60px;
+        text-align: center;
+      }
+      small{
+        display: block;
+      }
+       [data-sr] { visibility: hidden; }
+    </style>
+<% stylesheets.each do |style| %>
+  <%= stylesheet_link_tag style %>
+<% end %>
+
+
+
+<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js", "scrollReveal.min.js", 'jquery.particleground.min.js'   %>
+
+
+</head>
+
+<body>
+
+<%= yield %>
+
+<div id="homer">
+  <div class="head">
+            
+          <!-- Hair and top of head -->
+          <div class="hair1"></div>
+          <div class="hair2"></div>
+          <div class="body head-top"></div>
+          <div class="no-border body head-main"></div>
+
+          <!-- The 'M' above the ear -->
+          <div class="no-border m1"></div>
+          <div class="no-border m2"></div>
+          <div class="no-border m3"></div>
+          <div class="no-border m4"></div>
+
+          <!-- The neck parts -->
+          <div class="no-border neck1"></div>
+          <div class="body neck2"></div>
+
+          <!-- The ear -->
+          <div class="body ear">
+        <div class="no-border inner1"></div>
+        <div class="no-border inner2"></div>
+        <div class="no-border body clip"></div>
+          </div>
+
+          <!-- The mouth -->
+          <div class="mouth">
+        <div class="mouth5"></div>
+        <div class="mouth2"></div>
+        <div class="mouth1"></div>
+        <div class="mouth7"></div>
+        <div class="no-border mouth3"></div>
+        <div class="no-border mouth4"></div>
+        <div class="no-border mouth6"></div>
+        <div class="no-border mouth8"></div>
+          </div>
+
+          <!-- The right eye -->
+          <div class="right-eye">
+        <div class="no-border right-eye-pupil"></div>
+        <div class="no-border body eyelid-top"></div>
+        <div class="no-border body eyelid-bottom"></div>
+          </div>
+
+          <!-- The nose -->
+          <div class="body nose"></div>
+          <div class="body nose-tip"></div>
+
+          <!-- The left eye -->
+          <div class="left-eye">
+        <div class="no-border left-eye-pupil"></div>
+        <div class="no-border body eyelid-top"></div>
+        <div class="no-border body eyelid-bottom"></div>
+          </div>
+      </div>
+</div>
+</body>
+
+
+
+</html>
