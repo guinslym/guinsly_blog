@@ -12,6 +12,8 @@ gem 'rake', '~> 10.1'
 gem "middleman-livereload"
 gem 'puma', '~> 2.7'
 gem 'middleman-title'
+gem "middleman-syntax"
+gem "redcarpet"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"

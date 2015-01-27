@@ -180,8 +180,8 @@ section.header_name h1 span{
                         <div class="post-meta hidden-xs">
                           <div class="date">
                             <span class="icon"><i class="fa fa-calendar"></i></span>
+                            <span class="month"><%= I18n.t("date.abbr_month_names")[article.date.month] %></span>
                             <span class="day"><%= article.date.strftime('%d') %></span>
-                            <span class="month">janvier</span>
                           </div>
                           <div class="like-box">
                             <a href="#" class="btn btn-block btn-xs btn-base btn-icon btn-heart">
@@ -192,7 +192,7 @@ section.header_name h1 span{
                         <div class="post-content-wr">
                             <div class="post-meta-top">
                                 <h2 class="post-title">
-                                <a href="/articles/the-three-sides-of-a-man-named-abraham"><%= link_to  article.title, article %></a>
+                                <%= link_to  article.title, article %>
                                 </h2>
                             </div>
                             <div class="post-content clearfix">
@@ -272,8 +272,8 @@ section.header_name h1 span{
           </div>
       </div>
 </div>
-</body>
 <script src="http://vincentgarreau.com/particles.js/particles.js"></script>
+</body>
 <script>
 function pJS_desktop(){
   particlesJS('particles-js', {
