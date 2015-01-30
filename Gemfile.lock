@@ -81,6 +81,8 @@ GEM
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
       rack-livereload (~> 0.3.15)
+    middleman-meta-tags (0.1.2)
+      middleman-core (>= 3.0.0)
     middleman-sprockets (3.4.1)
       middleman-core (>= 3.3)
       sprockets (~> 2.12.1)
@@ -139,6 +141,7 @@ DEPENDENCIES
   middleman (~> 3.3.5)
   middleman-blog (~> 3.5.3)
   middleman-livereload
+  middleman-meta-tags
   middleman-title
   puma (~> 2.7)
   rake (~> 10.1)

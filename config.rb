@@ -32,9 +32,10 @@ end
 
 activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '
 #ignore "/blog/2014-09-03-migration-interprovinciale-au-canada-en-2013.html"
-activate :syntax, line_numbers: true
-set :markdown_engine, :redcarpet
-set :markdown, fenced_code_blocks: true
+
+
+activate :meta_tags
+set_meta_tags description: 'Powerful website full of best practices and keywords'
 
 
 page "/feed.xml", layout: false
@@ -83,11 +84,12 @@ page "/feed.xml", layout: false
 #activate :livereload
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+ require "lib/custom_helpers"
+ helpers CustomHelpers
+ helpers do
+
+
+ end
 
 
 activate :directory_indexes
