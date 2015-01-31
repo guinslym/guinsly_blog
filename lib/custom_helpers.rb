@@ -4,7 +4,7 @@ module CustomHelpers
      h = [
       "l'Open Access en question".to_sym => lorem,
       "Graph diagram of all professors from MIS program at UOttawa".to_sym => lorem,
-      "La migration interprovinciale au canada en 2013".to_sym => lorem,
+      "La migration interprovinciale au canada en 2013".to_sym => lorem
      ]
    end
 

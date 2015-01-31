@@ -151,7 +151,7 @@ section.header_name h1 span{
 
 
 <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js", "scrollReveal.min.js", 'jquery.particleground.min.js'   %>
-
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.1/jquery.timeago.min.js"></script>
 
 </head>
 
@@ -166,7 +166,7 @@ section.header_name h1 span{
 
 
 <div id="particles-js"></div>
-
+<%# create_json_file %>
 
 <%= yield %>
 
@@ -181,6 +181,7 @@ section.header_name h1 span{
       <div class="col-md-10 col-lg-offset-1 post_index_articles">
                       <!-- Standard image post example -->
                       <div class="article-index style2">
+                      <!--
                         <div class="post-meta hidden-xs">
                           <div class="date">
                             <span class="icon"><i class="fa fa-calendar"></i></span>
@@ -193,6 +194,7 @@ section.header_name h1 span{
                             </a>
                           </div>
                         </div>
+                        -->
                         <div class="post-content-wr">
                             <div class="post-meta-top">
                                 <h2 class="post-title">
@@ -201,10 +203,17 @@ section.header_name h1 span{
                             </div>
                             <div class="post-content clearfix">
                                 <div class="post-desc">
-                                    <% des = find_the_description() 
-                                        des = des[0]
-                                        des.default = des.values.first %>
-                                    <p><%= des[article.title] %></p>
+                                     <p><%#= article.summary %></p>
+                                    <p>
+                                    <% article.tags.each do |n| %>
+                                    <span class="label label-primary" style="margin: 5px 0;"><%= n %></span>
+                                    <% end %>
+                                    <br/>
+                                    <span><%= I18n.t("date.abbr_month_names")[article.date.month] %> - <%= article.date.strftime('%d') %> - <%= article.date.strftime('%Y') %> </span>
+                                    <!--
+                                    <abbr class="timeago" title="<%= article.date.strftime('%z') %>"><%= I18n.t("date.month_names")[article.date.month] %> <%= article.date.strftime('%d') %>, <%= article.date.strftime('%Y') %></abbr>
+                                    -->
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -353,6 +362,10 @@ function checkOnResize(){
     }
   }
 }
+
+jQuery(document).ready(function() {
+  //jQuery("abbr.timeago").timeago();
+});
 </script>
 
 
