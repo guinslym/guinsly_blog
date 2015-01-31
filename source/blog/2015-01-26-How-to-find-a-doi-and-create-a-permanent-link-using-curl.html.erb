@@ -1,0 +1,341 @@
+---
+title: How to find a doi and create a permanent link using curl
+date: 2015-01-26 02:12 UTC
+tags: curl, doi, cli
+layout: 2015/blog2015
+published: true
+---
+
+
+<style type="text/css">
+	pre{
+		margin: 18px 0; 
+	}
+    p{
+        margin: 18px 0;
+    }
+    .article_title{
+        color:#B61924;text-transform: capitalize;
+        padding: 20px 0 40px 0;
+    }
+    p.prerequis{
+        font-weight: bolder;
+    }
+</style>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
+
+<div class="container article_index">
+
+<div class="row">
+  <div class="col-lg-9 col-lg-offset-1">
+    <div class="row text-center">
+    <h1 class="article_title" style="  ">how to find a DOI and create a permanent link using curl</h1>
+    </div>
+
+    <div class="post-desc">
+      <p>DOI (Digital Object Identifier) is a system to identify and to find an Object (document) on a network. This document may be an audio file, an image, a paper, a video ... The DOI assign an unique identifyer for an object so it can be retrieve even if the redirection uri changes.</p>
+    <p class="prerequis"><strong>Prerequisite</strong></p>
+    <p style="text-indent:40px;">A command line tool (shell/terminal) (For Windows: download <a href="http://curl.haxx.se/download.html">curl</a> and <a href="http://www.cygwin.com/">cygwin</a>)</p>
+     <p style="text-indent:40px;">A doi: I will use this one: <a href="http://doi.wiley.com/10.1002/asi.23179">10.1002/asi.23179</a></p>
+
+    <p>Curl is a program available on pretty much all the operating system (Windows, Unix, Linux, Mac OS X ...). What does it really do? </p>
+    <p class="note">In your terminal type the following: (Note: <strong>please don't type '-> %'</strong>)</p>
+<div class="row ">
+
+<pre class="prettyprint">
+ -> %  whatis curl
+    curl (1)             - transfer a URL
+</pre>
+
+</div>
+
+    <p>It doesn't say much :) but it actually does a lot of things, it will transfer or retrieve data to or from an url. </p>
+
+<div class="row ">
+
+<pre class="prettyprint lang-ruby">
+ -> %  man curl | less
+</pre>
+
+<pre class="prettyprint linenums ">
+ curl  is  a tool to transfer data from or to a server, using one of the
+ supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS,  IMAP,
+ IMAPS,  LDAP,  LDAPS,  POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS,
+ TELNET and TFTP).  
+</pre>
+
+</div>
+
+    <p>(press 'q' to exit ). So we will use this tool to retrieve the url and as it is written further down in the man, we can pass switches or paremeters to the curl command. We will pass one parameter  '--head'. This parameter (--head) allows you to view the HTTP response headers that the web server returns when requesting a URL..</p>
+
+    <div class="row ">
+
+        <pre class="prettyprint  lang-ruby">
+-> %  curl --head http://dx.doi.org/10.1002/asi.23179
+        </pre>
+        <pre class="prettyprint linenums">
+HTTP/1.1 303 See Other
+Server: Apache-Coyote/1.1
+Vary: Accept
+Location: http://doi.wiley.com/10.1002/asi.23179
+Expires: Fri, 30 Jan 2015 20:49:19 GMT
+Content-Type: text/html;charset=utf-8
+Content-Length: 162
+Date: Fri, 30 Jan 2015 04:46:21 GMT
+        </pre>
+
+    </div>
+
+    <p>Curl went to this address and the server send a '303' response code.
+  </p>
+  <blockquote>303: 'The response to the request can be found under a different URI and SHOULD be retrieved using a GET method on that resource. source: <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">w3.org</a></blockquote>
+  <p>
+  	Now that you have the URI let's remove from the output all the line that are unnecessary because we only need to print the URI. We will use grep, it will search only for the pattern that I need. I want grep to look for a line that start with 'Location'. We will also use an other parameter: '-s' 
+  </p>
+
+ <div class="row ">
+          <pre class="prettyprint">
+-s, --silent
+        Silent  or  quiet  mode. Don't show progress meter or error mes‐
+        sages.  Makes Curl mute. It will still output the data  you  ask
+        for, potentially even to the terminal/stdout unless you redirect
+        it.
+
+        </pre>
+</div>
+<p>Now you can type the following:</p>
+    <div class="row ">
+
+        <pre class="prettyprint lang-ruby">
+-> % curl --head -s http://dx.doi.org/10.1002/asi.23179  | grep "Location"
+
+Location: http://doi.wiley.com/10.1002/asi.23179
+        </pre>
+
+    </div>
+
+    <p>Not bad but we can do better. We can remove the word 'location' from the output using a regular expression. </p>
+
+    <div class="row ">
+
+        <pre class="prettyprint linenums lang-ruby">
+-> % curl --head -s http://dx.doi.org/10.1002/asi.23179  | grep -Po  '(\b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))))'
+ 
+ http://doi.wiley.com/10.1002/asi.23179
+        </pre>
+
+    </div>
+
+    <p>Let's take this further let's say that we want to retrieve all the resources associated with this DOI, I want to know the authors, the title of this paper and other usefull information. For that I will dump the HTTP response header (-D) that may contains cookies. I also want curl to take theses informations (cookies) and go to the redirection link (-L). I also want the information in plain text and within this text I want to retrieve all the lines that start with 'doi'.</p>
+
+
+     <div class="row ">
+
+        <pre class="prettyprint lang-ruby">
+-D, --dump-header <file>
+    This  option  is  handy to use when you want to store
+    the headers that an HTTP site sends to  you.  Cookies
+    from  the headers could then be read in a second curl
+    ... 
+
+-H, --header <header>
+    (HTTP) Extra header to use when getting a  web  page.
+    You  may  specify  any  number of extra headers....
+
+-L, --location
+    (HTTP/HTTPS) If the server reports that the requested
+    page has moved to  a  different  location  (indicated
+    with  a  Location:  header  and a 3XX response code),
+    this option will make curl redo the  request  on  the
+    new place. 
+        </pre>
+
+    </div>
+
+     <div class="row ">
+
+        <pre class="prettyprint linenums lang-ruby">
+-> % curl -s -D --next -L -H "Accept: text/plain" "http://dx.doi.org/10.1002/asi.23179" | grep  "doi:"
+
+Zhu, X., Turney, P., Lemire, D., & Vellino, A. (2014). Measuring academic influence: Not all citations are equal. J Assn Inf Sci Tec, 66(2), 408–427. doi:10.1002/asi.23179
+        </pre>
+
+    </div>
+
+
+     <p>Let's say that we want to see the webpage locally like it's suppose to look in Willey' website. We will dump the webpage in a file call doi.html and than opens it in Firefox. <strong>Notes: </strong> as I'm not quite sure what is the command to open a browser in Mac OS X and Windows, you can run the first command bellow and than go to your directory and open in your browser the file named doi.html </p>
+
+         <div class="row ">
+
+        <pre class="prettyprint linenums lang-ruby">
+-> % #IMPORTANT for MAC OS and Windows user: 
+curl -D -s -L  "Accept: text/html;charset=UTF-8" "http://dx.doi.org/10.1002/asi.23179" > doi.html
+
+
+-> % #Linux distro
+curl -D -s -L  "Accept: text/html;charset=UTF-8" "http://dx.doi.org/10.1002/asi.23179" > /tmp/doi.html && firefox /tmp/doi.html
+        </pre>
+        <!-- I need the -s because otherwise it will output the header response in the html page -->
+
+    </div>
+
+
+    <p>Lets retrieve the turtle instead of a plain text or an html file.</p>
+    
+       <div class="row ">
+
+        <pre class="prettyprint lang-ruby">
+-> % curl -D - -L -H  "Accept: text/turtle" "http://dx.doi.org/10.1002/asi.23179"
+
+        </pre>
+<script src="https://gist.github.com/guinslym/cd917a60c6e649410128.js"></script>
+
+    </div>
+
+<p>Something is really interesting here: Whitin the header section the location have changed for <strong>Location: http://data.crossref.org/10.1002%2Fasi.23179</strong> this wasn't the location that we had in the previous HTTP response header <em>Location: http://doi.wiley.com/10.1002/asi.23179</em>. So the redirection have been process by <a href="http://data.crossref.org/"><strong>http://data.crossref.org/</strong></a> by following this link I realized that <strong>crosscite.org</strong> provides an API to GET a doi resource and their documentation is pretty neat. For the moment, I don't have a grip of RDF so I do prefer retrieving the resource in json instead of turtle.</p>
+
+<div class="row ">
+<pre class="prettyprint  lang-javascript">
+-> % curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" http://dx.doi.org/10.1002/asi.23179
+
+{  
+   "subtitle":[  
+      "Measuring Academic Influence"
+   ],
+   "issued":{  
+      "date-parts":[  
+         [  
+            2014,
+            5,
+            21
+         ]
+      ]
+   },
+   "score":1.0,
+   "prefix":"http:\/\/id.crossref.org\/prefix\/10.1002",
+   "author":[  
+      {  
+         "family":"Zhu",
+         "given":"Xiaodan"
+      },
+      {  
+         "family":"Turney",
+         "given":"Peter"
+      },
+      {  
+         "family":"Lemire",
+         "given":"Daniel"
+      },
+      {  
+         "family":"Vellino",
+         "given":"Andr\u00e9"
+      }
+   ],
+   "container-title":"Journal of the Association for Information Science and Technology",
+   "reference-count":79,
+   "page":"408-427",
+   "deposited":{  
+      "date-parts":[  
+         [  
+            2015,
+            1,
+            20
+         ]
+      ],
+      "timestamp":1421712000000
+   },
+   "issue":"2",
+   "funder":[  
+      {  
+         "award":[  
+            "26143"
+         ],
+         "name":"Natural Sciences and Engineering Research Council of Canada",
+         "DOI":"10.13039\/501100000038"
+      }
+   ],
+   "title":"Measuring academic influence: Not all citations are equal",
+   "type":"journal-article",
+   "DOI":"10.1002\/asi.23179",
+   "ISSN":[  
+      "2330-1635"
+   ],
+   "URL":"http:\/\/dx.doi.org\/10.1002\/asi.23179",
+   "source":"CrossRef",
+   "publisher":"Wiley-Blackwell",
+   "indexed":{  
+      "date-parts":[  
+         [  
+            2015,
+            1,
+            23
+         ]
+      ],
+      "timestamp":1421971998759
+   },
+   "volume":"66",
+   "member":"http:\/\/id.crossref.org\/member\/311"
+}
+
+</pre>
+</div>
+
+
+    <p>Voilà!!! This was my long journey to find out how to retrieve a doi resource. </p>
+
+    <h4>Hack safe! :)</h4>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<style type="text/css">
+	   .media
+    {
+        /*box-shadow:0px 0px 4px -2px #000;*/
+        margin: 20px 0;
+        padding:30px;
+    }
+    .dp
+    {
+        border:10px solid #eee;
+        transition: all 0.2s ease-in-out;
+    }
+    .dp:hover
+    {
+        border:2px solid #eee;
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);  
+        -webkit-transform:rotate(360deg);  
+        /*-webkit-font-smoothing:antialiased;*/
+    }
+</style>
+<div class="row">
+
+
+    <div class="col-lg-6 col-lg-offset-1">
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object dp img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/guinslym/128.jpg" style="width: 100px;height:100px;">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Guinsly Mondésir <small> Ottawa</small></h4>
+                <h5>Web developer</h5>
+                <hr style="margin:8px auto">
+
+                <span class="label label-default">doi</span>
+                <span class="label label-default">cli</span>
+                <span class="label label-info">curl</span>
+                <span class="label label-default">HTTP</span>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+</div>
+

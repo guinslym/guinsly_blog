@@ -1,0 +1,106 @@
+---
+title: Introduction aux Métadonnées de l'EXIF
+date: 2015-01-30 23:49 UTC
+tags: metadata, exif
+layout: 2015/blog2015
+published: false
+---
+
+<style type="text/css">
+	pre{
+		margin: 18px 0; 
+
+	}
+</style>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
+<div class="container article_index">
+
+<div class="row">
+  <div class="col-lg-9 col-lg-offset-1">
+    <div class="row text-center">
+    <h1 style="color:#B61924;text-transform: capitalize;  ">Introduction aux Métadonnées de l'EXIF</h1>
+    </div>
+
+    <div class="post-desc">
+
+    <p>Je suis entrain d'analyser les données ouvertes du Musée des Sciences et de la Technologie du Canada disponible sur leur <a href="http://techno-science.ca/fr/donnees.php">portail</a>. Ces données contiennent des métadonnées sur leurs artefacts. J'ai voulu savoir si certaines métadonnées de ces artefacts correspondaient au métadonnées de l'EXIF des photographies.</p>
+      
+    <h3>Définition</h3>
+    <p><strong>Métadonnée: </strong>Ce sont des informations permettant de décrire une ressource. Ces informations sont soit interne ou externe. Interne veux dire que la resource elle même contient des métadonnées par exemple : Tout être humain à un ADN. L'ADN est en soit une métadonnée décrivant le baggage génétiques de cette personne. C'est image est une photo de Dale Chihuly. Alors j'ai moi-même mis associé une information à cette image alors c'est une métadonnée externe.</p>
+    <blockquote>L’Exchangeable image file format ou Exif est une spécification de format de fichier pour les images utilisées par les appareils photographiques numériques. Il a été établi par le Japan Electronic Industry Development Association (JEIDA). Cette spécification repose sur des formats existants tels que JPEG, TIFF version 6.0 et RIFF format de fichier audio WAVE, en y ajoutant des balises de métadonnées. L’Exif n’est pas supporté avec les formats JPEG 2000 ou PNG.</blockquote>
+
+    <blockquote>IPTC : L'Information Interchange Model (IIM) est une structure et un jeu d'attributs de métadonnées applicable à des fichiers texte, des images et d'autres types de média. </blockquote>
+
+    <p>La différence entre les deux c'est que L'EXIF sont des informations créer par l'appareil de photographie numérique ou d'un logiciel, lors de la création de l'image. Donc la créations de métadonnées est automatique. Les métadonnées de l''IPTC dépendent de l'auteur de l'image : Est-ce que je veux ajouter mes coordonées géographiques ; un droit d'auteur ou une license ….</p>
+
+    <hr/>
+     <p>J'aimerais savoir comment est-ce que je peux reproduire cette image le plus fidèlement que possible. Alors j'aimerais savoir que contiennent les métadonnées de cette image. </p>
+
+     <p>Il y a plusieurs métadonnées qui peuvent se retrouver sur une image. C'est difficile d'en déterminer le nombre, cela dépend de l'appareil ou du logiciel utilisée lors de la création de l'image. Parmi les métadonnées ont peut retrouver ceux-ci :</p>
+
+     <table>
+     	<tr>
+     		<td>Date : </td><td>La date de la création de l'image (si et seulement si la date de l'appareil a bien été réglé au préalable</td>
+     	</tr>
+     </table>
+
+     <script src="https://gist.github.com/guinslym/ce6c8fa8a492d6b4801c.js"></script>
+
+
+    
+
+  
+
+    </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<style type="text/css">
+	   .media
+    {
+        /*box-shadow:0px 0px 4px -2px #000;*/
+        margin: 20px 0;
+        padding:30px;
+    }
+    .dp
+    {
+        border:10px solid #eee;
+        transition: all 0.2s ease-in-out;
+    }
+    .dp:hover
+    {
+        border:2px solid #eee;
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg);  
+        -webkit-transform:rotate(360deg);  
+        /*-webkit-font-smoothing:antialiased;*/
+    }
+</style>
+<div class="row">
+
+
+    <div class="col-lg-6 col-lg-offset-1">
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object dp img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/guinslym/128.jpg" style="width: 100px;height:100px;">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Guinsly Mondésir <small> Ottawa</small></h4>
+                <!--<h5>Software developer</h5>-->
+                <hr style="margin:8px auto">
+
+                <span class="label label-default">HTML5/CSS3</span>
+                <span class="label label-default">jQuery/Angular</span>
+                <span class="label label-info">Python</span>
+                <span class="label label-default">Ruby</span>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+</div>
