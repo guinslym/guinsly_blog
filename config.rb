@@ -92,7 +92,6 @@ page "/feed.xml", layout: false
 
  end
 
-Time.zone = "Montreal"
 
 activate :directory_indexes
 
