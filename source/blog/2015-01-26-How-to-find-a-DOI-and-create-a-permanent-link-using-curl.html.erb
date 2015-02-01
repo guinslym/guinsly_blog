@@ -39,7 +39,7 @@ published: true
     </div>
 
     <div class="post-desc">
-      <p>DOI (Digital Object Identifier) is a system to identify and to find an Object (document) on a network. This document may be an audio file, an image, a paper, a video ... The <a href="http://www.doi.org/doi_handbook/7_IDF.html">International DOI Foundation</a> assigns an unique identifyer (DOI) for an object so it can be retrieve even if its location (uri) changes.</p>
+      <p>DOI (Digital Object Identifier) is a system to identify and to find an Object (document) on a network. This document may be an audio file, an image, a paper, a video ... The <a href="http://www.doi.org/doi_handbook/7_IDF.html">International DOI Foundation</a> assigns an unique identifyer (DOI) to an object so it can be retrieve even if its location (uri) changes.</p>
 
       <table class="table  table-bordered" style="width:50%">
         <caption>DOI </caption>
@@ -224,7 +224,7 @@ curl -D -s -L  "Accept: text/html;charset=UTF-8" "http://dx.doi.org/10.1002/asi.
 <pre class="prettyprint  lang-javascript">
 -> % curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" http://dx.doi.org/10.1002/asi.23179
 
-#IMPORTANT if you have Python and you want to format the output like in my example
+#IMPORTANT if you have Python and you want to format the output like in this example
 -> % curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" http://dx.doi.org/10.1002/asi.23179 | python -mjson.tool
 
 {  
