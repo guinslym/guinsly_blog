@@ -21,6 +21,12 @@ published: true
     p.prerequis{
         font-weight: bolder;
     }
+    ul.references li{
+      list-style: circle !important;
+    }
+    thead tr td{
+      font-weight: bolder;
+    }
 </style>
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
 
@@ -33,12 +39,30 @@ published: true
     </div>
 
     <div class="post-desc">
-      <p>DOI (Digital Object Identifier) is a system to identify and to find an Object (document) on a network. This document may be an audio file, an image, a paper, a video ... The DOI assign an unique identifyer for an object so it can be retrieve even if the redirection uri changes.</p>
+      <p>DOI (Digital Object Identifier) is a system to identify and to find an Object (document) on a network. This document may be an audio file, an image, a paper, a video ... The <a href="http://www.doi.org/doi_handbook/7_IDF.html">International DOI Foundation</a> assigns an unique identifyer (DOI) for an object so it can be retrieve even if its location (uri) changes.</p>
+
+      <table class="table  table-bordered" style="width:50%">
+        <caption>DOI </caption>
+        <thead>
+          <tr>
+            <td>DOI translator</td>
+            <td>Naming Authority (prefix)</td>
+            <td>suffix</td>
+          </tr>
+        </thead>
+        <tbody>
+          <td>http://dx.doi.org/</td>
+          <td>10.1002</td>
+          <td>asi.23179</td>
+        </tbody>
+      </table>
+
+
     <p class="prerequis"><strong>Prerequisite</strong></p>
-    <p style="text-indent:40px;">A command line tool (shell/terminal) (For Windows: download <a href="http://curl.haxx.se/download.html">curl</a> and <a href="http://www.cygwin.com/">cygwin</a>)</p>
+    <p style="text-indent:40px;">A command line interface (shell/terminal) (For Windows: download <a href="http://curl.haxx.se/download.html">curl</a> and <a href="http://www.cygwin.com/">cygwin</a>)</p>
      <p style="text-indent:40px;">A doi: I will use this one: <a href="http://doi.wiley.com/10.1002/asi.23179">10.1002/asi.23179</a></p>
 
-    <p>Curl is a program available on pretty much all the operating system (Windows, Unix, Linux, Mac OS X ...). What does it really do? </p>
+    <p>Curl is a program available on pretty much all the operating system and linux distros (Windows, Unix, Mac OS X ...). What does it really do? </p>
     <p class="note">In your terminal type the following: (Note: <strong>please don't type '-> %'</strong>)</p>
 <div class="row ">
 
@@ -126,7 +150,7 @@ Location: http://doi.wiley.com/10.1002/asi.23179
 
     </div>
 
-    <p>Let's take this further let's say that we want to retrieve all the resources associated with this DOI, I want to know the authors, the title of this paper and other usefull information. For that I will dump the HTTP response header (-D) that may contains cookies. I also want curl to take theses informations (cookies) and go to the redirection link (-L). I also want the information in plain text and within this text I want to retrieve all the lines that start with 'doi'.</p>
+    <p>Let's take this a little bit further let's say that we want to retrieve the title of this paper, along with the authors and so on as if it was dtyled in a APA style. For that I will dump the HTTP response header (-D) that may contains cookies. I also want curl to take theses informations (cookies) and go to the redirection link (-L). I also want the information in plain text and within this text I want to retrieve all the lines that start with 'doi'.</p>
 
 
      <div class="row ">
@@ -188,11 +212,13 @@ curl -D -s -L  "Accept: text/html;charset=UTF-8" "http://dx.doi.org/10.1002/asi.
 -> % curl -D - -L -H  "Accept: text/turtle" "http://dx.doi.org/10.1002/asi.23179"
 
         </pre>
-<script src="https://gist.github.com/guinslym/cd917a60c6e649410128.js"></script>
 
     </div>
+<script src="https://gist.github.com/guinslym/cd917a60c6e649410128.js"></script>
 
-<p>Something is really interesting here: Whitin the header section the location have changed for <strong>Location: http://data.crossref.org/10.1002%2Fasi.23179</strong> this wasn't the location that we had in the previous HTTP response header <em>Location: http://doi.wiley.com/10.1002/asi.23179</em>. So the redirection have been process by <a href="http://data.crossref.org/"><strong>http://data.crossref.org/</strong></a> by following this link I realized that <strong>crosscite.org</strong> provides an API to GET a doi resource and their documentation is pretty neat. For the moment, I don't have a grip of RDF so I do prefer retrieving the resource in json instead of turtle.</p>
+<p>Something is really interesting here: Whitin the header section the location have changed for <strong>Location: http://data.crossref.org/10.1002%2Fasi.23179</strong> this wasn't the location that we had in the previous HTTP response header <em>Location: http://doi.wiley.com/10.1002/asi.23179</em>. So the redirection have been process by <a href="http://data.crossref.org/"><strong>http://data.crossref.org/</strong></a> by following this link I realized that <strong>crosscite.org</strong> provides an API to GET a DOI resource and their documentation is pretty neat. </p>
+
+<p>So all the steps I did above to retrieved the resource associated with the DOI was from scratch. I realized that I could have get the result faster if I knew about <strong>crosscite</strong>. For the last example I will use their doc and as I don't know much about RDF, I do prefer retrieving the resource in json instead of turtle :)</p>
 
 <div class="row ">
 <pre class="prettyprint  lang-javascript">
@@ -281,10 +307,31 @@ curl -D -s -L  "Accept: text/html;charset=UTF-8" "http://dx.doi.org/10.1002/asi.
 </div>
 
 
-    <p>Voilà!!! This was my long journey to find out how to retrieve a doi resource. </p>
+    <p>Voilà!!! This was my long journey to find out how to retrieve a DOI resource. </p>
+
+    <p class="prerequis"><strong>Challenge:</strong></p>
+
+    <p>From the previous example. Try to retrieve the <strong>xml</strong> version instead. But you must only output the lines that include the name 'Vellino' or 'vellino' along with their line number.
+    </p>
+
 
     <h4>Hack safe! :)</h4>
+    <hr/>
 
+    
+    <p class="prerequis" style="margin-top:60px;"><strong>References:</strong></p>
+    <ul class="references">
+      <li><a href="http://www.doi.org/doi_handbook/7_IDF.html">International DOI Foundation</a></li>
+      <li><a href="https://fr.wikipedia.org/wiki/Digital_Object_Identifier">wikipedia (en)</a></li>
+      <li><a href="https://pt.wikipedia.org/wiki/Digital_object_identifier">wikipedia (pt)</a></li>
+      <li><a href="http://curl.haxx.se/docs/manpage.html">Unix man curl</a></li>
+      <li><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?grep">Unix man grep</a></li>
+      <li><a href="http://crosscite.org/cn/">DOI content negociation</a></li>
+      <li><a href="https://github.com/CrossRef/rest-api-doc/blob/master/rest_api.md">Crossref API</a></li>
+      <li><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP/1.1: Header Field Definitions</a></li>
+    </ul>
+
+     <hr/>
     </div>
     </div>
   </div>
@@ -345,3 +392,11 @@ curl -D -s -L  "Accept: text/html;charset=UTF-8" "http://dx.doi.org/10.1002/asi.
   </div>
 </footer>
 
+<script type="text/javascript">
+  $('a').each(function() {
+   var a = new RegExp('/' + window.location.host + '/');
+   if (!a.test(this.href)) {
+      $(this).attr("target","_blank");
+   }
+});
+</script>
