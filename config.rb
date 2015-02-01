@@ -32,7 +32,6 @@ activate :blog do |blog|
 end
 
 activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '
-ignore "/blog/2015/01/30/introduction-aux-metadonnees-de-l-exif/"
 
 
 activate :meta_tags

@@ -224,6 +224,9 @@ curl -D -s -L  "Accept: text/html;charset=UTF-8" "http://dx.doi.org/10.1002/asi.
 <pre class="prettyprint  lang-javascript">
 -> % curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" http://dx.doi.org/10.1002/asi.23179
 
+#IMPORTANT if you have Python and you want to format the output like in my example
+-> % curl -LH "Accept: application/rdf+xml;q=0.5, application/vnd.citationstyles.csl+json;q=1.0" http://dx.doi.org/10.1002/asi.23179 | python -mjson.tool
+
 {  
    "subtitle":[  
       "Measuring Academic Influence"
