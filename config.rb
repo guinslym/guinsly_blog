@@ -24,6 +24,7 @@ activate :blog do |blog|
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 
+
   # Enable pagination
    blog.paginate = true
    blog.per_page = 10
@@ -31,7 +32,7 @@ activate :blog do |blog|
 end
 
 activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '
-#ignore "/blog/2014-09-03-migration-interprovinciale-au-canada-en-2013.html"
+ignore "/blog/2015/01/30/introduction-aux-metadonnees-de-l-exif/"
 
 
 activate :meta_tags
@@ -91,6 +92,7 @@ page "/feed.xml", layout: false
 
  end
 
+Time.zone = "Montreal"
 
 activate :directory_indexes
 
