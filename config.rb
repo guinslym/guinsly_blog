@@ -39,11 +39,17 @@ activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '
 activate :meta_tags
 set_meta_tags description: 'Powerful website full of best practices and keywords'
 
+activate :google_analytics do |ga|
+  ga.tracking_id = 'UA-62420229-1'
+  ga.domain_name = 'guinslym.info'
+  ga.development = false
+end
 
 page "/feed.xml", layout: false
 
 # silence i18n warning
 ::I18n.config.enforce_available_locales = false
+
 
 ###
 # Compass

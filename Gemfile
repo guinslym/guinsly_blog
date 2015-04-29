@@ -15,6 +15,7 @@ gem "middleman-livereload"
 gem 'puma', '~> 2.7'
 gem 'middleman-title'
 gem 'middleman-meta-tags'
+gem 'middleman-google-analytics'
 gem 'nokogiri'
 
 # For feed.xml.builder
