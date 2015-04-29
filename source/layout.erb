@@ -223,6 +223,11 @@ footer, footer h3{
   padding-top:10px;
   padding-bottom:10px;
 }
+p.description{
+  font-size: 1.825rem;
+  line-height: 1.8;
+  color: #404040;
+}
 </style>
 
 
@@ -271,7 +276,7 @@ footer, footer h3{
                                 <%= link_to  article.title, article %> 
                                 </h2>
                                 <span><%#= article.methods.sort.grep /description/ %></span>
-                                <span><%= article.data.description %></span>
+                                <p class="description"><%= article.data.description %></p>
                             </div>
                             <div class="post-content clearfix">
                                 <div class="post-desc">
