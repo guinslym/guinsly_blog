@@ -31,6 +31,8 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
+ignore '2015-02-18-why-do-i-volunteer-at-disada?.html.erb'
+
 activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '
 
 

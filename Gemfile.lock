@@ -12,6 +12,7 @@ GEM
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chunky_png (1.3.3)
+    coderay (1.1.0)
     coffee-script (2.3.0)
       coffee-script-source
       execjs
@@ -50,6 +51,7 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    method_source (0.8.2)
     middleman (3.3.7)
       coffee-script (~> 2.2)
       compass (>= 1.0.0, < 2.0.0)
@@ -83,6 +85,9 @@ GEM
       rack-livereload (~> 0.3.15)
     middleman-meta-tags (0.1.2)
       middleman-core (>= 3.0.0)
+    middleman-pry (0.0.4)
+      middleman-core (~> 3.2)
+      pry (~> 0.9)
     middleman-sprockets (3.4.1)
       middleman-core (>= 3.3)
       sprockets (~> 2.12.1)
@@ -101,6 +106,10 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.12.4)
       activesupport (>= 3.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (2.11.0)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
@@ -113,6 +122,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     sass (3.4.10)
+    slop (3.6.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -145,6 +155,7 @@ DEPENDENCIES
   middleman-blog (~> 3.5.3)
   middleman-livereload
   middleman-meta-tags
+  middleman-pry
   middleman-title
   nokogiri
   puma (~> 2.7)
