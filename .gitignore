@@ -9,6 +9,10 @@
 
 #ignore template
 /quick-v1.3.1
+/source/assets/mail
+/source/assets/rs-plugin
+/source/assets/scss
+/source/assets/twit-api
 
 # Ignore the build directory
 /build
