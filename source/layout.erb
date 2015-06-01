@@ -1,570 +1,241 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title><%= page_title %></title>
-  <meta charset="UTF-8">
-  <meta name="description" content="Blog de Guinsly Mondésir, Student in Information Studies (MSc)" />
- <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed|Merriweather|Francois+One|Shadows+Into+Light|Bree+Serif' rel='stylesheet' type='text/css'>
-<% stylesheets =  "core/bootstrap.min.css", "core/font-awesome-4.2.0/css/font-awesome.min.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" , 'migration_interprovinciale/homer.css'
-%>
-    <style>
-      h1.question{
-        margin: 60px 0;
-        font-family: 'Roboto Condensed', sans-serif;
-      }
-      iframe,img{
-        margin-bottom: 70px;
-      }
-      h1.title{
-        margin-top: 60px;
-        margin-bottom: 60px;
-        text-align: center;
-      }
-      small{
-        display: block;
-      }
-       [data-sr] { visibility: hidden; }
-    </style>
-<% stylesheets.each do |style| %>
-  <%= stylesheet_link_tag style %>
-<% end %>
+<html lang="fr  ">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">       
+        <title><%= page_title %></title>
+        <!-- Bootstrap -->
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!--custom css (Using style.scss file for customize)-->
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <!--Ion icons-->
+        <link href="assets/icons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <!--google fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo:400,700,400italic' rel='stylesheet' type='text/css'>
+        <!--Flex slider-->
+        <link href="assets/css/flexslider.css" rel="stylesheet">
+        <!--popups css-->
+        <link href="assets/css/magnific-popup.css" rel="stylesheet">
+        <!--animated css-->
+        <link href="assets/css/animate.css" rel="stylesheet">
+        <!--Custom css-->
+        <link href="assets/css/custom.css" rel="stylesheet">
 
-<style type="text/css">
-  div.post_index_articles {
-    margin-bottom: 30px;
-}
-.article-index.style2 {
-    padding-left: 95px;
-}
-.article-index {
-    margin-bottom: 20px;
-    position: relative;
-}
-.article-index.style2 .post-meta {
-    display: block;
-    left: 0;
-    position: absolute;
-    text-transform: uppercase;
-    top: 0;
-    width: 74px;
-}
-#particles-js{width:100%;height:300px;background-color:#b61924;}
-div.date {
-    border-bottom: medium none !important;
-}
-.article-index.style2 .post-meta .date {
-    border-bottom: 1px solid #e0eded;
-    color: #333;
-    font-family: "Roboto",sans-serif;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    text-align: center;
-}
-
-.article-index.style2 .post-meta .date .icon {
-    display: block;
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 6px;
-}
-.article-index.style2 .post-meta .date .day {
-    display: block;
-    font-size: 36px;
-    font-weight: 600;
-}
-.article-index.style2 .post-meta .date .month {
-    display: block;
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 6px;
-}
-.btn-base {
-    background-color: #3498DB;
-    border: 1px solid #3498DB;
-    color: #fff !important;
-}
-.btn-block {
-    display: block;
-    width: 100%;
-}
-.article-index.style2 .post-content-wr {
-    position: relative;
-}
-.article-index.style2 .post-meta-top {
-    position: relative;
-}
-.article-index.style2 .post-title {
-    line-height: 26px;
-    margin: 15px 0 8px;
-}
-.article-index.style2 .post-title a {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 20px;
-    text-transform: none;
-}
-.article-index.style2 .post-content .post-desc {
-    text-align: justify;
-}
-.article-index.style2 .post-meta {
-    text-transform: uppercase;
-    
-}
-h2.post-title a{
-  font-size: 2.625rem !important;
-  font-weight: bolder;
-  font-family: 'Merriweather', serif;
-  color: #E51843;
-  text-decoration: none;
-}
-div.post-desc p {
-  font-family: inherit;
-  font-size: 1.8rem ;
-  font-weight: normal;
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-  text-rendering: optimizelegibility;
-}
-section.header{
-
-  background-color:#EE5420;
-  min-height: 300px;
-}
-section{
-  margin: 0;
-  padding: 0;
-}
-div.article_index{
-   margin-top:30px;
-}
-section.header_name h1{
-  font-family: 'Francois One', sans-serif;
-}
-section.header_name h1 span{
-  font-family: 'Shadows Into Light', cursive;
-}
-.panel{font-family:'Source Sans Pro';position:absolute;z-index:10;width:200px;height:208px;background:#eee;top:50%;left:50%;margin:-104px 0 0 -100px;padding:20px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}.panel h1{font-size:1.8em;font-weight:700;text-align:center;margin-bottom:10px;color:#222}.panel h2{font-weight:400;font-size:.8em;margin-bottom:16px;text-align:center;line-height:1.3em}
-
-span.la_date{
-  font-size: 1.0em;
-  font-style: italic;
-  display: block;
-}
-
-.social-1 li a i:hover {
-    opacity: 0.8;
-}
-.social-1 li a i.fa-facebook {
-    background-color: #3b5998;
-}
-.social-1 li a i.fa-twitter {
-    background-color: #0084b4;
-}
-.social-1 li a i.fa-google-plus {
-    background-color: #c63d2d;
-}
-
-.social-1 li a i.fa-file-word-o {
-    background-color: #c63d2d;
-}
-
-.social-1 li a i.fa-github {
-    background-color: #666;
-}
-.social-1 li a i.fa-dribbble {
-    background-color: #ea4c89;
-}
-
-.post_index_articles{
-  background-color: #fff;
-  //border-style: dashed;
- // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
-  border-bottom: 1px solid #ddd;
-}
+        <!--revolution slider setting css-->
+        <link href="assets/rs-plugin/css/settings.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
 
-.social-1 li a i {
-    color: #fff;
-    font-size: 16px;
-    height: 42px;
-    line-height: 42px;
-    text-align: center;
-    transition: all 200ms ease-in 0s;
-    width: 42px;
-}
-footer, footer h3{
-  color:fff;
-}
-.footer-col p {
-    color: #d5d5d5;
-    letter-spacing: 0.09em;
-}
-#footer {
-    background: none repeat scroll 0 0 #353739;
-    border-bottom: 1px solid #464647;
-    padding: 0px 0 0px;
-    position: relative;
-}
-.widget-title::first-letter {
-    border-bottom: 3px solid #25cbf5;
-}
-.widget-title {
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding: 0 0 10px;
-    text-transform: uppercase;
-}
-.day{
-  color: #666;
-}
-.post_index_articles{
-  padding-top:10px;
-  padding-bottom:10px;
-}
-p.description{
-  font-size: 1.825rem;
-  line-height: 1.8;
-  color: #404040;
-}
-a.main_link{
-  text-decoration: none;
-  color: #000;
-}
-</style>
-
-
-<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js", "scrollReveal.min.js", 'jquery.particleground.min.js', 'particle.js'   %>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.1/jquery.timeago.min.js"></script>
-
-</head>
-
-<body>
-
-<section class="header_name">
-  <div class="container">
-    <h1><a href="http://www.guinslym.info" class="main_link">Guinsly Mond&eacute;sir::<span>&nbsp;My Blog</span></a></h1>
-  </div>
-</section>
+    </head>
+    <body class="gray-bg">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top sticky-navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"  style="">
+                    Guinsly Mond&eacute;sir 
+                    <!--
+                    <img src="assets/images/logo-dark.png" alt="LOGO">
+                    -->
+                    </a>
+                </div>
 
 
 
-<div id="particles-js"></div>
-<%# create_json_file %>
-
-<%= yield %>
+                <!-- navbar -->
 
 
 
-<div class="container article_index">
+            </div><!--/.container -->
+        </nav>
 
-<%#= create_json_file %>
-<% blog.articles[0...10].each do |article| %>
-  <div class="row ">
-   
-      <div class="col-md-10 col-lg-offset-1 post_index_articles">
-                      <!-- Standard image post example -->
-                      <div class="article-index style2">
-                      <div class="post-meta hidden-xs">
-                          <div class="date">
-                            <span class="icon"><i class="fa fa-calendar"></i></span>
-                            <span class="day"><%= article.date.strftime('%d') %></span>
-                            <span class="month"><%= I18n.t("date.abbr_month_names")[article.date.month] %></span>
-                            <span class="btn btn-block btn-xs btn-base btn-icon btn-heart"><%= article.date.strftime('%Y') %></span>
-                          </div>
-                        </div>
-                        <div class="post-content-wr">
-                            <div class="post-meta-top">
-                                <h2 class="post-title">
-                                <%= link_to  article.title, article %> 
-                                </h2>
-                                <span><%#= article.methods.sort.grep /description/ %></span>
-                                <p class="description"><%= article.data.description %></p>
-                            </div>
-                            <div class="post-content clearfix">
-                                <div class="post-desc">
-                                     <p><%#= article.summary %></p>
-                                    <p>
-                                    <% article.tags.each do |n| %>
-                                    <span class="label label-primary" style="margin: 5px 0;"><%= n %></span>
-                                    <% end %>
-                                    
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                      </div>
-
-                     
-
+        <div class="container section-inner">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <div class="text-center wow animated flipInY">
+                        <h2 class="center-title"> The blog</h2>
+                        <span class="center-border-line"></span>
+                        <p class="sub-text">Stay up to date and take a look at my latest Posts</p>
                     </div>
-    </div>
-    <% end %>
-</div>
+                </div>
+            </div><!--center title row end-->
+        </div><!--header container end-->
 
-<style>
-  .center-heading {
-    margin-bottom: 40px;
-}
-.center-heading h2 {
-    color: #333;
-    font-size: 27px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.center-heading .icon::after {
-    border-bottom: 1px solid #25cbf5;
-    content: "";
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    top: 10px;
-    width: 50px;
-}
-.center-heading .icon::before {
-    border-bottom: 1px solid #25cbf5;
-    content: "";
-    display: inline-block;
-    left: 0;
-    position: absolute;
-    top: 10px;
-    width: 50px;
-}
-.divided-50 {
-    height: 50px;
-    width: 100%;
-}
-.center-heading {
-    margin-bottom: 40px;
-}
-.center-heading h2 {
-    color: #333;
-    font-size: 27px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-</style>
-
-<style> 
-.cta {
-    background-color: #f4f5f2;
-    color: #666;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    padding-top: 50px;
-    text-align: center;
-}
-.margin-btm-30 {
-    margin-bottom: 30px;
-}
-.cta h3 {
-    font-family: "Lato",sans-serif;
-    font-weight: 400;
-    margin: 0;
-}
-strong, b {
-    font-family: "Montserrat",sans-serif;
-    font-weight: 400;
-}
-.btn-theme {
-    background-color: #25cbf5 !important;
-    color: #fff;
-}
-.btn-lg {
-    font-size: 13px;
-    padding: 14px 28px 13px;
-    text-transform: uppercase;
-}
-</style>
-<!--
-<div class="cta">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 margin-btm-30">
-                <h3>
-
-                    <strong>Quick</strong> is a simple and quick way for your creative one page projects
-
-                </h3>
-            </div>
-            <div class="col-sm-4">
-                <a class="btn btn-theme btn-lg" href="#">Purchase now</a>
-            </div>
-        </div>
-    </div>
-</div>
--->
-
-<!--
-<section class="light-typo" id="hero">
-        <div class="image-bg animated fadeIn" id="cover-image" style="background-position: 50% -14.5%;"></div>
-        <div class="container welcome-content">
-          <div class="middle-text">
-            <h1>HELLO, I AM MELISSA SING</h1>
-            <h2><b>Key Lime</b> is a blog theme built with Bootstrap <br>by <b>Angelo Studio</b></h2>
-            <a href="#start" class="btn smooth-scroll">Get Stated</a>
-          </div>
-        </div>
-      </section>
--->
-<footer id="footer">
+        <div class="inner-page-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4 margin-btm-30">
-                        <div class="footer-col">
-                            <h3 class="widget-title">
-                                Social Network
-                            </h3>
-                        </div><!--footer-col-->
+                    <div class="col-md-9">
 
-                        <div class="footer-col">
-                            <ul class="list-inline social-1">
-                                <li><a href="https://www.facebook.com/guiny2" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/guinslym" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="https://github.com/guinslym" target="_blank"><i class="fa fa-github"></i></a></li>
-                                <!--
-                                <li><a href="https://github.com/guinslym" target="_blank"><i class="fa fa-file-word-o"></i></a></li>
-                                -->
-                            </ul>
-                        </div><!--footer-col-->
-                    </div>
-                    <!--
-                    <div class="col-sm-4 margin-btm-30">
-                        <div class="footer-col">
-                            <h3 class="widget-title">
-                                My resume
-                            </h3>
-                        </div>
-                        <div class="tweet"><span>Loading...</span></div>
+                <% blog.articles[0...10].each do |article| %>
+                    <!-- blog loop -->
+                        <div class="blog-entry clearfix wow animated fadeInUp" data-wow-dela="0.1s">
+                            <div class="blog-date">
+                                <span class="date-day"><%= article.date.strftime('%d') %></span>
+                                <span class="date-month"><%= I18n.t("date.abbr_month_names")[article.date.month] %> <%= article.date.strftime('%Y') %></span>
+                            </div><!--blog date into left position-->
+                            <div class="blog-content">
+                                <h3 class="entry-title"><a href="blog-single.html"><%= link_to  article.title, article %> </a></h3>
+                                <div class="entry-media">
+                                    <div class="flexslider blog-slider">
+                                        <ul class="slides ">
+                                          <% 
+                                          images = article.data.image
+                                          if images %>
+                                             <% images.split(",").each do |img| %>
+                                             <li>
+                                                <img src="<%= img %>" alt="">
+                                            </li><!--Single slide li-->
+                                            <% 
+                                            #end loop
+                                            end %>
 
-                    </div>
-                    -->
-<!--
-
-                    <div class="col-sm-4">
-                        <div class="footer-col">
-                            <h3 class="widget-title">
-                                Subscribe to Newsletter
-                            </h3>
-                            <p>
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
-                            </p>
-                            <form class="subscribe-form" role="form">
-                                <div class="input-group">
-                                    <input type="email" placeholder="Enter email to subscribe" class="form-control">
-                                    <span class="input-group-btn">
-                                        <a href="#" class="btn  btn-theme btn-lg">Ok</a>
-                                        <!--<button class="btn  btn-theme btn-lg">Ok</button>-->
-                                    </span>
+                                          <% 
+                                          #end if
+                                          end %>
+                                            
+                                            <!--
+                                            <li>
+                                                <img src="http://www.myriad-online.com/images/forum/IMG_4692.jpg" alt="">
+                                            </li><!--Single slide li->
+                                            <li>
+                                                <img src="http://www.myriad-online.com/images/forum/IMG_4692.jpg" alt="">
+                                            </li><!--Single slide li-->
+                                        </ul>
+                                    </div>
                                 </div>
-                            </form>
-                        </div><!--footer-col-->
+                                <!--entry media-->
+                                
+                                <h6 class="entry-author">by <%= 'Guinsly Mondésir' %></h6>
+                                <p class="post-text">
+                                  <%= article.data.description %>
+                                  <!--
+                                    Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In elit purus, ullamcorper vel luctus vitae, venenatis eu odio. Vivamus tincidunt, urna quis consectetur venenatis, quam urna tincidunt mi, quis convallis enim dolor sed elit Praesent ...
+                                    -->
+                                </p>
+                                <p>
+                                    <%= link_to "<span> Read more...</span>",article, :class => "btn btn-dark-border btn-sm"  %>
+                                </p>  
+                            </div><!--blog content-->
+                        </div><!--blog entry-->
+                       <% end %>
+
+                    <!-- blog loop -->
+
+                    <!-- partials posts -->
+                        <div class="divided50"></div>
+
+
+
+                       <!-- pagninatino -->
+
+
+
+                        <div class="divided70"></div>
+                    </div><!--blog entry column end-->
+                    <div class="col-md-3">
+                        <div class="sidebar-column">
+                            <!--
+                            <div class="sidebar-widget">
+                                <form role="form">
+                                    <input type="text" placeholder="Search" class="form-control">
+                                    <button type="submit" class="search-icon"><i class="ion-android-search"></i></button>
+                                </form>
+                            </div> <!--sidebar-widget->
+                                -->
+                            <div class="sidebar-widget">
+
+
+                                <h3 class="sidebar-title">My "likes" on the web</h3>
+                            
+                                <ul class="list-unstyled latest-post">
+                            <% data.links.liens.sample(8).each do |l| %>
+                                    <li class="clearfix">
+                                    <!--
+                                        <a href="#" class="post-thumb"> <img src="assets/images/work-3.jpg" class="img-responsive" alt=""></a>
+                                        -->
+                                        <div class="recent-post-content">
+                                        <%= link_to l.title, l.link, :target => "_blank" %>
+                                            <span><%= l.date %> </span>
+                                        </div>
+                                    </li>
+                                    <hr/>
+                            <% end %>
+                                </ul>
+                            </div><!--sidebar widget-->
+
+
+                          <!-- Side bar widgets -->
+
+
+
+                        </div><!--sidebar column-->
                     </div>
-                    -->
                 </div>
+            </div><!--container-->
+        </div><!--inner page content-->
+
+        <footer class="footer">
+            <div class="container text-center">
+                <a href="#"><img src="assets/images/logo-dark.png" alt=""></a>
+                <ul class="list-inline socials">
+                    <li><a href="https://twitter.com/?lang=en" class="twit" target="_blank"><i class="ion-social-twitter-outline"></i></a></li>
+                    <li><a href="https://github.com/guinslym" class="drib" target="_blank"><i class="ion-social-github"></i></a></li>
+                    <!--
+                    <li><a href="#" class="fb"><i class="ion-social-facebook-outline"></i></a></li>
+                    <li><a href="#" class="g-plus"><i class="ion-social-googleplus-outline"></i></a></li>
+                    <li><a href="#" class="yout"><i class="ion-social-youtube-outline"></i></a></li>
+                    -->
+                </ul>
+                <p>&copy; 2015. <i class="ion-ios-heart-outline"></i> </p>
             </div>
-        </footer>
+        </footer><!--footer end-->
 
 
-<script src="http://vincentgarreau.com/particles.js/particles.js"></script>
-<%= google_analytics_universal_tag %>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-62420229-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-<script>
-function pJS_desktop(){
-  particlesJS('particles-js', {
-    particles: {
-      color: '#fff',
-      shape: 'circle',
-      opacity: 1,
-      size: 2.5,
-      size_random: true,
-      nb: 100,
-      line_linked: {
-        enable_auto: true,
-        distance: 250,
-        color: '#fff',
-        opacity: 0.5,
-        width: 1,
-        condensed_mode: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 600
-        }
-      },
-      anim: {
-        enable: true,
-        speed: 3
-      }
-    },
-    interactivity: {
-      enable: true,
-      mouse: {
-        distance: 200
-      },
-      detect_on: 'canvas',
-      mode: 'grab',
-      line_linked: {
-        opacity: .5
-      },
-      events: {
-        onclick: {
-          enable: true,
-          mode: 'push',
-          nb: 4
-        }
-      }
-    },
-    retina_detect: true
-  });
-}
-
-
-if(window.innerWidth > 1100){
-  pJS_desktop();
-}else{
-  pJS_mobile();
-}
-
-/* on resize */
-
-window.addEventListener('resize', function() {
-  checkOnResize();
-}, true);
-
-function checkOnResize(){
-  if(window.innerWidth > 1100){
-    if(pJS.particles.nb != 150){
-      console.log('desktop mode')
-      pJS.fn.vendors.destroy();
-      pJS_desktop();
-    }
-  }else{
-    if(pJS.particles.nb == 150){
-      console.log('mobile mode');
-      pJS.fn.vendors.destroy();
-      pJS_mobile();
-    }
-  }
-}
-
-jQuery(document).ready(function() {
-  //jQuery("abbr.timeago").timeago();
-});
-</script>
-
-
-
+        <!--jquery-->
+        <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery-migrate.min.js" type="text/javascript"></script> 
+        <script src="assets/js/moderniz.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.easing.1.3.js" type="text/javascript"></script>
+        <!-- bootstrap js-->
+        <script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <!--flex slider-->
+        <script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script>
+        <!--Parallax-->
+        <script type="text/javascript" src="assets/js/parallax.min.js"></script>
+        <!--twitter api-->
+        <script src="assets/js/tweetie.min.js" type="text/javascript"></script>
+        <!--Waypoints-->
+        <script src="assets/js/waypoints.min.js"></script>
+        <!--popup js-->
+         <script src="assets/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+        <!--image loads plugin -->
+        <script src="assets/js/jquery.imagesloaded.min.js" type="text/javascript"></script>
+        <script src="assets/js/jquery.sticky.js" type="text/javascript"></script>  
+        <script src="assets/js/isotope.pkgd.min.js" type="text/javascript"></script>
+        <script src="assets/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+        <script src="assets/js/wow.min.js" type="text/javascript"></script>
+        <!--cantact form script-->
+        <script src="assets/js/contact_me.js" type="text/javascript"></script>
+        <script src="assets/js/jqBootstrapValidation.js" type="text/javascript"></script>
+        <script src="assets/js/template.js" type="text/javascript"></script>
+        <script src="assets/js/isotope-custom.js" type="text/javascript"></script>
+        <!--revolution slider scripts-->
+        <script src="assets/rs-plugin/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+        <script src="assets/rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script> 
+        <script src="assets/js/revolution-custom.js" type="text/javascript"></script>
+    </body>
 </html>
