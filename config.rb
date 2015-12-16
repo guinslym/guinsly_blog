@@ -31,6 +31,21 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
+
+activate :deploy do |deploy|
+  deploy.method = :sftp
+  # host, user, passwword and path *must* be set
+  deploy.host = "sftp.example.com"
+  deploy.port = 22
+  deploy.path = "/srv/www/site"
+  # user is optional (no default)
+  deploy.user = "tvaughan"
+  # password is optional (no default)
+  deploy.password = "secret"
+  deploy.build_before = true
+end
+
+
 ignore '2015-02-18-why-do-i-volunteer-at-disada?.html.erb'
 
 activate :title, site: 'Blog de Guinsly Mondésir', separator: ' — '

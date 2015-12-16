@@ -1,0 +1,4 @@
+I had a lot of difficulty with 'middleman build or server'
+I had to do a 'gem cleanup'
+and delete my Gemfile.lock
+and comment all the unnecessary gem in my gemfile

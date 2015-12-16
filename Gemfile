@@ -4,18 +4,17 @@ source 'http://rubygems.org'
 
 #ruby "2.1.0"
 
-gem "middleman", "~> 3.3.5"
-gem "middleman-blog", "~> 3.5.3"
+gem "middleman"#, "~> 3.3.5"
+gem "middleman-blog"#, "~> 3.5.3"
 gem 'ffaker'
 
-gem 'middleman-pry'
 
-gem 'rake', '~> 10.1'
-gem "middleman-livereload"
-gem 'puma', '~> 2.7'
+gem 'rake'#, '~> 10.1'
+gem 'puma'#, '~> 2.7'
 gem 'middleman-title'
 gem 'middleman-meta-tags'
 gem 'middleman-google-analytics'
+gem 'middleman-deploy', '~> 1.0'
 gem 'nokogiri'
 
 # For feed.xml.builder
