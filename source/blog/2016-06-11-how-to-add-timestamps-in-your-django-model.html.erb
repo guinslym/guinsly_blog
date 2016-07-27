@@ -7,9 +7,6 @@ published: true
 description: "Django- Add timestamps to an existing table"
 ---
 
-django-extensions
-from models_utils import TimestampsModel
-
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <style type="text/css">
 	pre{
@@ -43,8 +40,8 @@ from models_utils import TimestampsModel
     </div>
 
     <div class="post-desc">
-      <p>You you create a Model in Django it comes automatically with a field called <strong>id</strong> but if you want to add <strong>timestamps</strong> you will need to add it manually.</p>
-
+      <p>If you want to add <strong>timestamps</strong> here a three options that you can take.</p>
+<hr>
       <p>First let's create a new project and a new app.</p>
 <div class="row ">
 
@@ -54,18 +51,24 @@ from models_utils import TimestampsModel
 </pre>
 
 </div>
-    <h3>One model</h3>
-    <p>let's add the new app <strong>blog</strong> to our <em>installed app</em></p>
-    <p>Now we can start creating our model. We will have four fields: <strong>title</strong> <strong>description</strong> <strong>updated_at</strong> <strong>created_at</strong></p>
+<hr>
+    <h3>Simplicity</h3>
+    <p>let's add the new app <strong>blog</strong> to our <em>installed apps</em></p>
+    <script src="https://gist.github.com/guinslym/c12deca06742ea1c499a29c3ef4f8e31.js"></script>
+    <p>Now we can start creating our model. We will have four fields: <strong>title</strong>, <strong>description</strong>, <strong>updated</strong>, <strong>created</strong></p>
+    <script src="https://gist.github.com/guinslym/8f5faf5647f7351c43d890deeb588c9d.js"></script>
+
 
     <h3>Being smarter</h3>
-    <p>If you planned to use these fields often in other Models. i.e. <strong>Comments</strong> <strong>Like</strong> <strong>ShoppingCart</strong> etc. It would be smarter keep thing DRY </p>
+    <p>If you planned to use these fields often in other Models. i.e. <strong>Comments</strong>, <strong>Like</strong>, <strong>ShoppingCart</strong> etc. It would be smarter keep things <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">Dry</a></p>
+    <script src="https://gist.github.com/guinslym/b584b1ee7056a42ac14b5ba40dcccd8d.js"></script>
 
-    <p>Do not put ... before models.Model otherwise your fields wil have will have this order.</p>
     <h3>Being smarter (suite)</h3>
-    <p>You could simply use a Django package to do the job. Isntalled the package<a href="#">django_extension</a> and insert it in your project.</p>
+    <p>There is an awesome package called <a href="https://django-extensions.readthedocs.io/en/latest/">Django extensions</a>. If you planned to use many of the functionnalities of this package you could add it to your project</p>
+    <script src="https://gist.github.com/guinslym/0002c01eca5a53cd22b88abe11a3033d.js"></script>
+    <p>After we will import it in your models.py</p>
+    <script src="https://gist.github.com/guinslym/de4a9b9e746d2bab1a25c5472890d63e.js"></script>
 
-    <p>After import it in your models.py</p>
 
 
 <style type="text/css">

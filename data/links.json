@@ -1,6 +1,6 @@
 {
   "liens": [
-     {	"link": "https://github.com/Swordfish90/cool-retro-term", 
+     {	"link": "https://github.com/Swordfish90/cool-retro-term",
 	"title": "Good looking terminal emulator which mimics the old cathode display...",
         "categorie": "code",
         "date": "2014-10-04"},
@@ -48,13 +48,21 @@
           "title": "The Scientific 7-minute workout",
           "categorie": "heath",
         "date": "2014-10-26"},
-  { "link" : "http://newsoffice.mit.edu/2014/mit-computer-scientists-can-predict-price-bitcoin#.VEadQI474jk",
-          "title": "MIT computer scientists can predict the price of Bitcoin",
+  { "link" : "http://vivin.net/2016/07/26/learning-how-to-program-in-oman-in-the-90s/",
+          "title": "Learning how to program in Oman in the 90’s",
           "categorie": "data-analysis",
-        "date": "2014-10-26"},
-  { "link" : "http://ibec.ischool.washington.edu/static/pubs/ibtheorybooktoc.pdf",
-          "title": "Theories of Information Behavior",
+        "date": "2016-07-26"},
+  { "link" : "http://www.dataorienteddesign.com/dodmain/node1.html",
+          "title": "Data oriented design",
           "categorie": "pdf",
-        "date": "2014-10-16"}
+        "date": "2016-07-25"},
+  { "link" : "https://github.com/krasimir/react-in-patterns",
+          "title": "List of design patterns/techniques used while developing with React",
+          "categorie": "pdf",
+        "date": "2016-07-25"},
+  { "link" : "https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html",
+          "title": "Create Apps with No Configuration",
+          "categorie": "pdf",
+        "date": "2016-07-24"}
   ]
 }
