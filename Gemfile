@@ -16,7 +16,7 @@ gem 'middleman-meta-tags'
 gem 'middleman-google-analytics'
 gem 'middleman-deploy', '~> 1.0'
 gem 'nokogiri'
+gem 'middleman-pagination'
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"
-
